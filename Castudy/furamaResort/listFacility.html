@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="home">
+    <div class="parallax_background parallax-window" data-parallax="scroll"
+         data-speed="0.8"></div>
+    <div class="home_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="home_content text-center">
+                        <div class="home_title"><h1>Facility</h1></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+
+    <tr style="background-color: #4CAF50">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Area</th>
+        <th>Cost</th>
+        <th>Max People</th>
+        <th>Standard Room</th>
+        <th>Description Other Convenience</th>
+        <th>Pool Area</th>
+        <th>Number OfF loors</th>
+        <th>Facility Free</th>
+        <th>Rent Type</th>
+        <th>Facility Type</th>
+        <th>Actions</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row : ${facilityList}">
+        <td th:text="${row.id}">1</td>
+        <td th:text="${row.name}">Villa Beach Front</td>
+        <td th:text="${row.area}">1000</td>
+        <td th:text="${row.cost}">2000</td>
+        <td th:text="${row.maxPeople}">3</td>
+        <td th:text="${row.standardRoom}">Vip</td>
+        <td th:text="${row.descriptionOtherConvenience}">Co ho boi</td>
+        <td th:text="${row.poolArea}">300</td>
+        <td th:text="${row.numberOfFloors}">2</td>
+        <td th:text="${row.facilityFree}"></td>
+        <td th:text="${row.rentType.name}">Thang</td>
+        <td th:text="${row.facilityType.name}">Villa</td>
+        <td>
+            <button type="button" class="btn btn-primary">edit</button>
+        </td>
+        <!--        <td><a th:href="@{/{id}/delete(id=${row.getId()})}">delete</a></td>-->
+        <td>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Delete
+            </button>
+
+        </td>
+
+
+    </tr>
+    <tr th:each="row : ${facilityList}">
+        <td th:text="${row.id}">2</td>
+        <td th:text="${row.name}">House Princess 01</td>
+        <td th:text="${row.area}">1000</td>
+        <td th:text="${row.cost}">2000</td>
+        <td th:text="${row.maxPeople}">3</td>
+        <td th:text="${row.standardRoom}">Normal</td>
+        <td th:text="${row.descriptionOtherConvenience}">Co bep nuong</td>
+        <td th:text="${row.poolArea}">300</td>
+        <td th:text="${row.numberOfFloors}">2</td>
+        <td th:text="${row.facilityFree}"></td>
+        <td th:text="${row.rentType.name}">Thang</td>
+        <td th:text="${row.facilityType.name}">House</td>
+        <td>
+            <button type="button" class="btn btn-primary">edit</button>
+        </td>
+        <!--        <td><a th:href="@{/{id}/delete(id=${row.getId()})}">delete</a></td>-->
+        <td>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Delete
+            </button>
+        </td>
+
+
+    </tr>
+    <tr th:each="row : ${facilityList}">
+        <td th:text="${row.id}">3</td>
+        <td th:text="${row.name}">Room Twin 01</td>
+        <td th:text="${row.area}">1000</td>
+        <td th:text="${row.cost}">2000</td>
+        <td th:text="${row.maxPeople}">3</td>
+        <td th:text="${row.standardRoom}">Normal</td>
+        <td th:text="${row.descriptionOtherConvenience}">Co tivi</td>
+        <td th:text="${row.poolArea}">300</td>
+        <td th:text="${row.numberOfFloors}">2</td>
+        <td th:text="${row.facilityFree}">Co nuoc loc</td>
+        <td th:text="${row.rentType.name}">Thang</td>
+        <td th:text="${row.facilityType.name}">Room</td>
+        <td>
+            <button type="button" class="btn btn-primary">edit</button>
+        </td>
+        <!--        <td><a th:href="@{/{id}/delete(id=${row.getId()})}">delete</a></td>-->
+        <td>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Delete
+            </button>
+        </td>
+
+
+    </tr>
+    </tbody>
+</table>
+<div>
+    <a th:href="@{'/facility'(page=${facilityList.number - 1})}" th:if="${facilityList.hasPrevious()}">Previous</a>
+    <span th:text="${facilityList.number + 1}"></span>/<span th:text="${facilityList.totalPages}"></span>
+    <a th:href="@{'/facility'(page=${facilityList.number + 1})}" th:if="${facilityList.hasNext()}">Next</a>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+          Are you sure?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

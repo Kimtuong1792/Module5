@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="home">
+    <div class="parallax_background parallax-window" data-parallax="scroll"
+         data-speed="0.8"></div>
+    <div class="home_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="home_content text-center">
+                        <div class="home_title"><h1>Customer</h1></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table">
+    <thead>
+
+    <tr style="background-color: #4CAF50">
+        <th>STT</th>
+        <th>Name</th>
+        <th>birthday</th>
+        <th>gender</th>
+        <th>idCard</th>
+        <th>numberPhone</th>
+        <th>email</th>
+        <th>Address</th>
+        <th>customerType</th>
+        <th>Actions</th>
+        <th>Actions</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row, i : ${customerList}">
+        <td th:text="${i.count} + 5 * ${customerList.number}">1</td>
+        <td th:text="${row.name}">Truong Thi Huyen</td>
+        <td th:text="${row.birthday}">10-10-1997</td>
+        <td th:if="${row.gender == 0} " th:text="Male">Female</td>
+        <td th:text="${row.idCard}">0123123122</td>
+        <td th:text="${row.numberPhone}">0901212121</td>
+        <td th:text="${row.email}">huyen@gmail.com</td>
+        <td th:text="${row.address}">Quang Nam</td>
+        <td th:text="${row.customerType.name}">Diamond</td>
+        <td>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    th:data-bs-target1="'#a' + ${row.id}">
+                Edit
+            </button>
+        </td>
+        <!--        <td><a th:href="@{/{id}/delete(id=${row.getId()})}">delete</a></td>-->
+        <td>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Delete
+            </button>
+
+        </td>
+
+
+    </tr>
+    <tr th:each="row, i : ${customerList}">
+        <td th:text="${i.count} + 5 * ${customerList.number}">2</td>
+        <td th:text="${row.name}">Le Thuan Dat</td>
+        <td th:text="${row.birthday}">10-10-1993</td>
+        <td th:if="${row.gender == 0} " th:text="Male">Male</td>
+        <td th:text="${row.idCard}">0123123122</td>
+        <td th:text="${row.numberPhone}">0901212121</td>
+        <td th:text="${row.email}">dat@gmail.com</td>
+        <td th:text="${row.address}">Quang Binh</td>
+        <td th:text="${row.customerType.name}">Platinium</td>
+        <td>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    th:data-bs-target1="'#a' + ${row.id}">
+                Edit
+            </button>
+        </td>
+        <td>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Delete
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div>
+    <a th:href="@{'/customer'(page=${customerList.number - 1})}" th:if="${customerList.hasPrevious()}">Previous</a>
+    <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
+    <a th:href="@{'/customer'(page=${customerList.number + 1})}" th:if="${customerList.hasNext()}">Next</a>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+</body>
+</html>
