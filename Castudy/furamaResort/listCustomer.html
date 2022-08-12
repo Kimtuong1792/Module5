@@ -99,10 +99,12 @@
         <td th:text="${row.address}">Quang Nam</td>
         <td th:text="${row.customerType.name}">Diamond</td>
         <td>
+            <a href="editCustomer.html">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                     th:data-bs-target1="'#a' + ${row.id}">
                 Edit
             </button>
+            </a>
         </td>
         <!--        <td><a th:href="@{/{id}/delete(id=${row.getId()})}">delete</a></td>-->
         <td>
