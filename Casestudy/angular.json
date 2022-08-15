@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Casestudy": {
+    "caseStudy": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/casestudy",
+            "outputPath": "dist/case-study",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,11 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
@@ -68,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Casestudy:build:production"
+              "browserTarget": "caseStudy:build:production"
             },
             "development": {
-              "browserTarget": "Casestudy:build:development"
+              "browserTarget": "caseStudy:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Casestudy:build"
+            "browserTarget": "caseStudy:build"
           }
         },
         "test": {
@@ -103,6 +102,6 @@
     }
   },
   "cli": {
-    "analytics": "546f8706-60c1-4ec7-af73-9a5f84387465"
+    "analytics": "51863ca6-495e-4b52-98dc-af17211c3d0d"
   }
 }
