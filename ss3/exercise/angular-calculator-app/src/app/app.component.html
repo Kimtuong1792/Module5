@@ -1,0 +1,35 @@
+<h2>Calculator app</h2>
+<div class="container-fluid">
+  <input type="text" style="width: 172px ; height: 30px" [value]="results"/>
+
+  <div class="row">
+
+    <div class="button-row">
+      <button style="width: 45px"  (click)="getValue('/')" >%</button>
+      <button style="width: 45px" (click)="getValue('7')"  >7</button>
+      <button style="width: 45px" (click)="getValue('8')" >8</button>
+      <button style="width: 45px" (click)="getValue('9')" >9</button>
+
+    </div>
+    <div class="button-row">
+      <button style="width: 45px" (click)="getValue('+')" >+</button>
+      <button style="width: 45px" (click)="getValue('4')" >4</button>
+      <button style="width: 45px" (click)="getValue('5')" >5</button>
+      <button style="width: 45px" (click)="getValue('6')" >6</button>
+
+    </div>
+    <div class="button-row">
+      <button style="width: 45px"  (click)="getValue('*')" >X</button>
+      <button style="width: 45px" (click)="getValue('1')" >1</button>
+      <button style="width: 45px" (click)="getValue('2')" >2</button>
+      <button style="width: 45px"  (click)="getValue('3')" >3</button>
+    </div>
+    <div class="button-row">
+      <button style="width: 45px" (click)="getValue('-')" >-</button>
+      <button style="width: 45px" (click)="clear()" >AC</button>
+      <button style="width: 45px" (click)="getValue('0')" >0</button>
+
+      <button style="width: 45px" (click)="calculate()" >=</button>
+    </div>
+  </div>
+</div>
