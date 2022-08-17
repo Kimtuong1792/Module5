@@ -1,0 +1,85 @@
+<div class="super_container">
+  <div class="home" style="height: 514px">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/about.jpg"
+         data-speed="0.8">
+      <img src="assets/images/services.jpg" alt="" height="500px" width="110%">
+    </div>
+    <div class="home_container">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="home_content text-center">
+              <div class="home_title"><h1>Facility</h1></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<table class="table">
+  <thead>
+
+  <tr style="background-color: #2e3f61 ; color: white">
+    <th>ID</th>
+    <th>Name</th>
+    <th>Area</th>
+    <th>Cost</th>
+    <th>Max People</th>
+    <th>Standard Room</th>
+    <th>Description Other Convenience</th>
+    <th>Pool Area</th>
+    <th>Number OfF loors</th>
+    <th>Facility Free</th>
+    <th>Rent Type</th>
+    <th>Facility Type</th>
+    <th>Actions</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of facility">
+    <td>{{item.id}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.area}}</td>
+    <td>{{item.cost}}</td>
+    <td>{{item.maxPeople}}</td>
+    <td>{{item.standardRoom}}</td>
+    <td>{{item.descriptionOtherConvenience}}</td>
+    <td>{{item.poolArea}}</td>
+    <td>{{item.numberOfFloors}}</td>
+    <td>{{item.facilityFree}}</td>
+    <td>{{item.rentType}}</td>
+    <td>{{item.facilityType}}</td>
+    <td><button type="button" class="btn btn-primary ">Edit</button></td>
+    <td> <button type="button" class="btn btn-danger" (click)="getFacilityDelete(item)"
+                 data-toggle="modal" data-target="#exampleModal">
+      Delete
+    </button></td>
+
+  </tr>
+  </tbody>
+</table>
+  <div class="vc_empty_space" style="height: 35px"><span class="vc_empty_space_inner"></span></div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p style="font-size: 15px; font-weight: 600"> do you want to delete {{facilityDelete.name}} ?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

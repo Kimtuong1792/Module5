@@ -1,1 +1,81 @@
-<p>list works!</p>
+<div class="super_container">
+<div class="home" style="height: 514px">
+  <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/about.jpg"
+       data-speed="0.8">
+    <img src="assets/images/elements.jpg" alt="" height="500px" width="110%">
+  </div>
+  <div class="home_container">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="home_content text-center">
+            <div class="home_title"><h1>Customer</h1></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<table class="table">
+  <thead>
+  <tr style="background-color: #2e3f61 ; color: white">
+    <th>STT</th>
+    <th>Name</th>
+    <th>birthday</th>
+    <th>gender</th>
+    <th>idCard</th>
+    <th>numberPhone</th>
+    <th>email</th>
+    <th>Address</th>
+    <th>customerType</th>
+    <th>Actions</th>
+    <th>Actions</th>
+
+  </tr>
+  <tr *ngFor="let item of customer">
+    <td>{{item.id}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.birthday}}</td>
+    <td>{{item.gender}}</td>
+    <td>{{item.idCard}}</td>
+    <td>{{item.numberPhone}}</td>
+    <td>{{item.email}}</td>
+    <td>{{item.address}}</td>
+    <td>{{item.customerType}}</td>
+    <td>
+      <button type="button" class="btn btn-primary ">Edit</button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-danger" (click)="getCustomerDelete(item)"
+              data-toggle="modal" data-target="#exampleModal">
+        Delete
+      </button>
+
+    </td>
+  </tr>
+  </thead>
+</table>
+<div class="vc_empty_space" style="height: 35px"><span class="vc_empty_space_inner"></span></div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 15px; font-weight: 600"> do you want to delete? {{customerDelete.name}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

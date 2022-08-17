@@ -11,12 +11,22 @@ import { FacilityComponent } from './facility/facility.component';
 import { ListComponent } from './customer/list/list.component';
 import { CreateComponent } from './customer/create/create.component';
 import { EditComponent } from './customer/edit/edit.component';
+import { FacilityListComponent } from './facility/facility-list/facility-list.component';
+import { ContractListComponent } from './contract/contract-list/contract-list.component';
+import { EditContractComponent } from './contract/edit-contract/edit-contract.component';
+import { CreateContractComponent } from './contract/create-contract/create-contract.component';
+import { CreateFacilityComponent } from './facility/create-facility/create-facility.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'customer', component: CustomerComponent},
+  {path: 'customer/customerList' , component: ListComponent},
   {path: 'facility', component: FacilityComponent},
   {path: 'contract', component: ContractComponent},
+  {path: 'facility/facilityList' , component: FacilityListComponent},
+  {path:'contract/contractList', component: ContractListComponent},
+  {path: 'contract/createContract', component: CreateContractComponent},
+  {path: 'customer/createCustomer', component: CreateComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
 ];
 @NgModule({
@@ -30,7 +40,12 @@ const routes: Routes = [
     FacilityComponent,
     ListComponent,
     CreateComponent,
-    EditComponent
+    EditComponent,
+    FacilityListComponent,
+    ContractListComponent,
+    EditContractComponent,
+    CreateContractComponent,
+    CreateFacilityComponent
   ],
   imports: [
     BrowserModule,
