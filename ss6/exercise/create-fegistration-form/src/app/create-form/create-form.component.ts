@@ -44,15 +44,16 @@ export class CreateFormComponent implements OnInit {
   }
   constructor(public formBuilder: FormBuilder) {
     this.createForm = this.formBuilder.group({
+      email: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.email,
+      ])),
       password: new FormControl('', Validators.compose([
         Validators.required,
         Validators.minLength(6)
 
       ])),
-      email: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.email,
-      ])),
+
       confirmpassword: new FormControl('', Validators.compose([
         Validators.required,
         Validators.minLength(6)

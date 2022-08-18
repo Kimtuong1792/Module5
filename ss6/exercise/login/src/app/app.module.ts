@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { FormloginComponent } from './formlogin/formlogin.component';
+import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormloginComponent
+    LoginComponent
   ],
     imports: [
         BrowserModule,

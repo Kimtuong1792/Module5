@@ -16,6 +16,7 @@ import { ContractListComponent } from './contract/contract-list/contract-list.co
 import { EditContractComponent } from './contract/edit-contract/edit-contract.component';
 import { CreateContractComponent } from './contract/create-contract/create-contract.component';
 import { CreateFacilityComponent } from './facility/create-facility/create-facility.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -47,11 +48,12 @@ const routes: Routes = [
     CreateContractComponent,
     CreateFacilityComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule,
-    RouterModule.forRoot(routes)
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule,
+        RouterModule.forRoot(routes),
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

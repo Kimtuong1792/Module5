@@ -41,7 +41,7 @@
     <td>{{item.numberPhone}}</td>
     <td>{{item.email}}</td>
     <td>{{item.address}}</td>
-    <td>{{item.customerType}}</td>
+    <td>{{item.customerType.name}}</td>
     <td>
       <button type="button" class="btn btn-primary ">Edit</button>
     </td>
@@ -53,6 +53,7 @@
 
     </td>
   </tr>
+
   </thead>
 </table>
 <div class="vc_empty_space" style="height: 35px"><span class="vc_empty_space_inner"></span></div>
@@ -69,7 +70,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <p style="font-size: 15px; font-weight: 600"> do you want to delete? {{customerDelete.name}}</p>
+        <p style="font-size: 15px; font-weight: 600"> do you want to delete? {{customerDelete}}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
