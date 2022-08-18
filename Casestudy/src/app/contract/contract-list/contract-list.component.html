@@ -38,7 +38,7 @@
     <td>{{item.customer}}</td>
     <td>{{item.starDate}}</td>
     <td>{{item.endDate}}</td>
-    <td>{{item.deposit}}</td>
+    <td>{{item.deposit |currency}}</td>
     <td>{{item.total}}</td>
     <td><button type="button" class="btn btn-primary ">Edit</button></td>
     <td>   <button type="button" class="btn btn-danger" (click)="getContractDelete(item)"
