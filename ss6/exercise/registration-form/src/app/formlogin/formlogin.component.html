@@ -9,12 +9,12 @@
   <input type="password" name="password" class="form-control" style="width: 400px" formControlName="password">
 
   <p style="color: red" *ngIf="createForm.controls['password'].hasError('required')&& createForm.touched ">Nhập không đúng định dạng</p>
-  <p style="color: red" *ngIf="createForm.controls['password'].hasError('minlength')">Nhập tối thiểu 6 ký tự</p>
+  <p style="color: red" *ngIf="createForm.controls['password'].hasError('minlength')&& createForm.touched ">Nhập tối thiểu 6 ký tự</p>
 
   <label class="form-label">Confirm Password</label>
   <input type="text" name="confirmpassword" class="form-control" style="width: 400px" formControlName="confirmPassword">
-  <p style="color: red" *ngIf="createForm.controls['confirmPassword'].hasError('required')">Pass không được để trống</p>
-  <p style="color: red" *ngIf="createForm.controls['confirmPassword'].hasError('minlength')">Nhập tối thiểu 6 ký tự</p>
+  <p style="color: red" *ngIf="createForm.controls['confirmPassword'].hasError('required')&& createForm.touched ">Pass không được để trống</p>
+  <p style="color: red" *ngIf="createForm.controls['confirmPassword'].hasError('minlength')&& createForm.touched ">Nhập tối thiểu 6 ký tự</p>
   <p style="color: red" *ngIf="createForm.controls['confirmpass'].hasError('invalid')">Password không khớp</p>
   <label class="form-label">Country</label>
   <select name="country" class="form-control" style="width: 400px" formControlName="country">

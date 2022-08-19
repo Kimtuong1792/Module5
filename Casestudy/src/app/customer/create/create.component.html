@@ -23,45 +23,53 @@
     <div id="form">
       <form [formGroup]="customerFrom" (ngSubmit)="submit()">
         <div class="col-6">
-          <input type="hidden"/>
+          <h5 class="form-label">Id</h5>
+          <input type="number" class="form-control" width="500" formControlName="id" name="id"/>
           <div class="mb-3">
             <h5 class="form-label">Name</h5>
-            <input type="text" class="form-control" width="500" formControlName="name"  name="name">
-
+            <input type="text" class="form-control" width="500" formControlName="name" name="name">
+            <p style="color: red" *ngIf="customerFrom.controls['name'].hasError('required') && customerFrom.touched">Name cannot be left blank</p>
+            <p style="color: red" *ngIf="customerFrom.controls['name'].hasError('pattern') && customerFrom.touched">  Customer names cannot contain numbers. And the first letter of each word must be capitalized.</p>
           </div>
           <div class="mb-3">
             <h5 class="form-label">Birthday</h5>
             <input type="date" class="form-control" width="500" formControlName="birthday" name="birthday">
+            <p style="color: red" *ngIf="customerFrom.controls['birthday'].hasError('required') && customerFrom.touched">Birthday cannot be left blank</p>
           </div>
           <div class="mb-3">
             <h5 class="form-label">Gender</h5>
             <select class="form-control" formControlName="gender" name="gender">
-              <option>Male</option>
-              <option>FeMale</option>
-              <option>LGBT</option>
+              <option value="Male">Male</option>
+              <option value="Female">FeMale</option>
+              <option value="LGBT">LGBT</option>
             </select>
+            <p style="color: red" *ngIf="customerFrom.controls['gender'].hasError('required') && customerFrom.touched">Gender cannot be left blank</p>
           </div>
 
           <div class="mb-3">
             <h5 class="form-label">IdCard</h5>
             <input type="number" class="form-control" formControlName="idCard" name="idCard"/>
-
+            <p style="color: red" *ngIf="customerFrom.controls['idCard'].hasError('required') && customerFrom.touched">Id Card cannot be left blank</p>
+            <p style="color: red" *ngIf="customerFrom.controls['idCard'].hasError('pattern') && customerFrom.touched"> ID Card must be in the correct format XXXXXXXXX or XXXXXXXXXXXX (X is the number 0-9)</p>
           </div>
           <div class="mb-3">
             <h5 class="form-label">Number Phone</h5>
-            <input type="number" class="form-control" formControlName="numberPhone" name="numberPhone"/>
-
+            <input type="text" class="form-control" formControlName="numberPhone" name="numberPhone"/>
+            <p style="color: red" *ngIf="customerFrom.controls['numberPhone'].hasError('required') && customerFrom.touched">Phone number cannot be left blank</p>
+            <p style="color: red" *ngIf="customerFrom.controls['numberPhone'].hasError('pattern') && customerFrom.touched"> Phone number must be in the correct format 090xxxxxxx or 091xxxxxxx or (84)+90xxxxxxx or (84)+91xxxxxxx.</p>
           </div>
           <div>
             <h5 class="form-label">Email</h5>
             <input type="text" class="form-control" formControlName="email" name="email"/>
-
+            <p style="color: red" *ngIf="customerFrom.controls['email'].hasError('required') && customerFrom.touched">Email cannot be left blank</p>
+            <p style="color: red" *ngIf="customerFrom.controls['email'].hasError('email') && customerFrom.touched">Email cannot be format</p>
           </div>
           <div>
             <h5 class="form-label">Address</h5>
             <input type="text" class="form-control" formControlName="address" name="address"/>
+            <p style="color: red" *ngIf="customerFrom.controls['address'].hasError('required') && customerFrom.touched">Address cannot be left blank</p>
           </div>
-          <div class="villa">
+          <div >
             <h5 class="form-label">Customer Type</h5>
             <select class="form-control" formControlName="customerType" name="customerType">
               <option value="Diamond">Diamond</option>
@@ -70,6 +78,7 @@
               <option value="Silver">Silver</option>
               <option value="Member">Member</option>
             </select>
+            <p style="color: red" *ngIf="customerFrom.controls['customerType'].hasError('required') && customerFrom.touched">Customer Type cannot be left blank</p>
             <br>
             <button type="submit" class="btn btn-primary" [disabled]="!customerFrom.valid">Save</button>
 

@@ -32,8 +32,8 @@
     <th>Actions</th>
 
   </tr>
-  <tr *ngFor="let item of customer">
-    <td>{{item.id}}</td>
+  <tr *ngFor="let item of customer , index as i">
+    <td>{{i+1}}</td>
     <td>{{item.name}}</td>
     <td>{{item.birthday}}</td>
     <td>{{item.gender}}</td>
