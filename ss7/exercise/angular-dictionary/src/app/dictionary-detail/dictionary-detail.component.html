@@ -1,13 +1,13 @@
 <h1>Detail</h1>
-<form [formGroup]="dictionaryForm">
-  <table>
+  <table style="border:2px">
     <tr>
       <td>English:</td>
-      <td><input type="text" formControlName="word"></td>
+      <td>{{detailList.word}}</td>
     </tr>
     <tr>
       <td>Vietnamese:</td>
-      <td><input type="text" formControlName="mean"></td>
+      <td>{{detailList.mean}}</td>
     </tr>
   </table>
-</form>
+
+

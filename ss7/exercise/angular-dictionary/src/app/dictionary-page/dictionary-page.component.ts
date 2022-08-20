@@ -8,17 +8,16 @@ import {IWord} from '../model/IWord';
   styleUrls: ['./dictionary-page.component.css']
 })
 export class DictionaryPageComponent implements OnInit {
-words: IWord[];
+words: IWord[] = [];
   constructor( private dictionaryService: DictionaryService) {
-
   }
 
   ngOnInit(): void {
     this.getAll();
-    console.log(this.words);
   }
 
-  private getAll() {
-    return this.dictionaryService.getAll();
+
+ getAll() {
+    return this.words =  this.dictionaryService.getAll();
   }
 }

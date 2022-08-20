@@ -20,14 +20,7 @@ export class DictionaryService {
     return this.wordList;
   }
 
-  translate(word: string) {
-    for (const item of this.wordList) {
-      if (word === item.word) {
-  return item;
-      }
-    }
-    return {
-      word : 'not found' , mean : 'try again'
-    };
+  translate(word) {
+    return this.wordList.find(detailList => detailList.word === word);
   }
 }
