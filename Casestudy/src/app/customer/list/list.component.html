@@ -43,7 +43,7 @@
     <td>{{item.address}}</td>
     <td>{{item.customerType.name}}</td>
     <td>
-      <button type="button" class="btn btn-primary ">Edit</button>
+      <button type="button" class="btn btn-primary " [routerLink]="['/customer/edit',item.id]">Edit</button>
     </td>
     <td>
       <button type="button" class="btn btn-danger" (click)="getCustomerDelete(item)"
@@ -70,11 +70,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <p style="font-size: 15px; font-weight: 600"> do you want to delete? {{customerDelete}}</p>
+        <p style="font-size: 15px; font-weight: 600" *ngIf="customerDelete"> do you want to delete? {{customerDelete.name}}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-danger" (click)="delete(customerDelete.id)">Delete</button>
       </div>
     </div>
   </div>

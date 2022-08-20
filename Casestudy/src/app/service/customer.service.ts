@@ -13,7 +13,7 @@ export class CustomerService {
       {
         id: 1,
         name: 'Truong Ngoc Mai',
-        birthday: '01/01/2000',
+        birthday: '2000-01-01',
         gender: "Female",
         idCard: '56213789022',
         numberPhone: '15543216417',
@@ -27,7 +27,7 @@ export class CustomerService {
       {
         id: 2,
         name: 'Tran Thi Lan',
-        birthday: '01/12/1998',
+        birthday: '1998-12-12',
         gender: "Male",
         idCard: '56213789022',
         numberPhone: '15543216417',
@@ -41,7 +41,7 @@ export class CustomerService {
       {
         id: 3,
         name: 'Le Van An',
-        birthday: '11/12/1995',
+        birthday: '1995-10-10',
         gender: "Female",
         idCard: '56213789022',
         numberPhone: '15543216417',
@@ -55,7 +55,7 @@ export class CustomerService {
       {
         id: 4,
         name: 'Nguyen Van Anh',
-        birthday: '09/07/1985',
+        birthday: '1985-10-10',
         gender: "Female",
         idCard: '56213789022',
         numberPhone: '15543216417',
@@ -92,6 +92,10 @@ export class CustomerService {
         this.customers[i] = customer;
       }
     }
+  }
+  deleteCustomer(id: number) {
+    let index = this.customers.findIndex(element => element.id === id);
+    this.customers.splice(index, 1);
   }
 }
 

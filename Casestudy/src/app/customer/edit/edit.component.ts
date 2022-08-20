@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CustomerService} from "../../service/customer.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {CustomerType} from "../../model/customerType";
+import {CustomerTypeService} from "../../service/customerType.service";
 
 @Component({
   selector: 'app-edit',
@@ -11,50 +12,41 @@ import {CustomerType} from "../../model/customerType";
 })
 export class EditComponent implements OnInit {
   customerForm: FormGroup = new FormGroup({});
-  // id = number;
-  //
+  id: number = 0;
+  customerTypeList: CustomerType[] =[];
+
   constructor(private customerService: CustomerService,
               private activatedRoute: ActivatedRoute,
-              private router: Router) {}
-  //   // this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
-  //   //   id = +paramMap.get('id');
-  //   //   const customer = this.getCustomer(this.id);
-  //   //   this.customerForm = new FormGroup({
-  //   //     id: new FormControl(customer.id),
-  //   //     name: new FormControl(customer.name),
-  //   //     birthday: new FormControl(customer.birthday),
-  //   //     gender: new FormControl(customer.gender),
-  //   //     idCard: new FormControl(customer.idCard),
-  //   //     numberPhone: new FormControl(customer.numberPhone),
-  //   //     email: new FormControl(customer.email),
-  //   //     address: new FormControl(customer.address),
-  //   //     customerType: new FormControl(customer.customerType),
-  //   //   });
-  //   // });
-  // }
-  // public customersType: CustomerType[] = [];
-  // compareWithId(item1: { id: any; }, item2: { id: any; }) {
-  //   return item1 && item2 && item1.id == item2.id;
-  // };
-  // getCustomers(id: number) {
-  //
-  //   const {customerService} = this;
-  //   return customerService.findById(id).subscribe(customer => {
-  //
-  //     this.customerForm = new FormGroup({
-  //           id: new FormControl(customer.id),
-  //           name: new FormControl(customer.name),
-  //           birthday: new FormControl(customer.birthday),
-  //           gender: new FormControl(customer.gender),
-  //           idCard: new FormControl(customer.idCard),
-  //           numberPhone: new FormControl(customer.numberPhone),
-  //           email: new FormControl(customer.email),
-  //           address: new FormControl(customer.address),
-  //           customerType: new FormControl(customer.customerType)
-  //
-  //     });
-  //   });
-  // }
+              private router: Router,
+              private customerTypeService: CustomerTypeService) {
+    this.activatedRoute.paramMap.subscribe((paraMap: ParamMap) => {
+      // @ts-ignore
+      this.id = +paraMap.get('id');
+      const customer = customerService.findById(this.id);
+      this.customerForm = new FormGroup({
+        // @ts-ignore
+        id: new FormControl(customer.id),
+        // @ts-ignore
+        name: new FormControl(customer.name),
+        // @ts-ignore
+        birthday: new FormControl(customer.birthday),
+        // @ts-ignore
+        gender: new FormControl(customer.gender),
+        // @ts-ignore
+        idCard: new FormControl(customer.idCard),
+        // @ts-ignore
+        numberPhone: new FormControl(customer.numberPhone),
+        // @ts-ignore
+        email: new FormControl(customer.email),
+        // @ts-ignore
+        address: new FormControl(customer.address),
+        // @ts-ignore
+        customerType: new FormControl(customer.customerType)
+      })
+    });
+    this.getCustomerType();
+  }
+
   ngOnInit(): void {
   }
 
@@ -62,9 +54,13 @@ export class EditComponent implements OnInit {
     return this.customerService.findById(id)
   }
 
+  getCustomerType() {
+    return this.customerTypeList = this.customerTypeService.getAll();
+  }
+
   updateCustomer(id: number) {
     const customer = this.customerForm.value;
     this.customerService.updateCustomer(id, customer);
-    this.router.navigate(['/customer'])
+    this.router.navigate(['customer/customerList'])
   }
 }

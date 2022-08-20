@@ -9,17 +9,22 @@ import {CustomerService} from "../../service/customer.service";
 })
 export class ListComponent implements OnInit {
   customer: Customer[] = [];
-  customerDelete: {} = {};
+  customerDelete: Customer | any;
 
   constructor(private customerService: CustomerService) {
     this.customer = this.customerService.getAll();
   }
 
   getCustomerDelete(temp: Customer) {
+    console.log(temp)
     this.customerDelete = temp;
   }
 
   ngOnInit(): void {
 
+  }
+
+  delete(id: number) {
+    return this.customerService.deleteCustomer(id)
   }
 }

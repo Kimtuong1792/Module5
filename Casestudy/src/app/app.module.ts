@@ -28,6 +28,7 @@ const routes: Routes = [
   {path:'contract/contractList', component: ContractListComponent},
   {path: 'contract/createContract', component: CreateContractComponent},
   {path: 'customer/createCustomer', component: CreateComponent},
+  {path: 'customer/edit/:id' , component: EditComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
 ];
 @NgModule({

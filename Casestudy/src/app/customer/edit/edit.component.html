@@ -21,9 +21,10 @@
   <div style="padding-left: 60px">
     <h2>Add new customers</h2>
     <div id="form">
-      <form [formGroup]="customerForm" >
+      <form [formGroup]="customerForm" (ngSubmit)="updateCustomer(id)">
         <div class="col-6">
-          <input type="hidden"/>
+          <h5 class="form-label">ID</h5>
+          <input  formControlName="id" name="id"/>
           <div class="mb-3">
             <h5 class="form-label">Name</h5>
             <input type="text" class="form-control" width="500" formControlName="name" name="name">
@@ -71,15 +72,11 @@
           <div >
             <h5 class="form-label">Customer Type</h5>
             <select class="form-control" formControlName="customerType" name="customerType">
-              <option value="Diamond">Diamond</option>
-              <option value="Platinium">Platinium</option>
-              <option value="Gold">Gold</option>
-              <option value="Silver">Silver</option>
-              <option value="Member">Member</option>
+          <option *ngFor="let type of customerTypeList" [ngValue]="type"> {{type.name}}</option>
             </select>
             <p style="color: red" *ngIf="customerForm.controls['customerType'].hasError('required')">Customer Type cannot be left blank</p>
             <br>
-            <button type="submit" class="btn btn-primary" [disabled]="!customerForm.valid">Save</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!customerForm.valid" >Save</button>
 
           </div>
         </div>
