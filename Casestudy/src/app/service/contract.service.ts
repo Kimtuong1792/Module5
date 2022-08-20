@@ -19,4 +19,13 @@ export class contractService {
   getAll(){
     return this.contract;
   }
+
+  saveContract(contracts: any) {
+    this.contract.push(contracts);
+  }
+
+  delete(id: number) {
+    let index = this.contract.findIndex(element => element.id === id);
+    this.contract.splice(index, 1);
+  }
 }

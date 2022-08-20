@@ -17,6 +17,7 @@ import { EditContractComponent } from './contract/edit-contract/edit-contract.co
 import { CreateContractComponent } from './contract/create-contract/create-contract.component';
 import { CreateFacilityComponent } from './facility/create-facility/create-facility.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { EditFacilityComponent } from './facility/edit-facility/edit-facility.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -25,10 +26,12 @@ const routes: Routes = [
   {path: 'facility', component: FacilityComponent},
   {path: 'contract', component: ContractComponent},
   {path: 'facility/facilityList' , component: FacilityListComponent},
+  {path: 'facility/createFacility' , component: CreateFacilityComponent},
+  {path: 'facility/editFacility/:id' , component: EditFacilityComponent},
   {path:'contract/contractList', component: ContractListComponent},
   {path: 'contract/createContract', component: CreateContractComponent},
   {path: 'customer/createCustomer', component: CreateComponent},
-  {path: 'customer/edit/:id' , component: EditComponent},
+  {path: 'customer/editCustomer/:id' , component: EditComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
 ];
 @NgModule({
@@ -47,7 +50,8 @@ const routes: Routes = [
     ContractListComponent,
     EditContractComponent,
     CreateContractComponent,
-    CreateFacilityComponent
+    CreateFacilityComponent,
+    EditFacilityComponent
   ],
     imports: [
         BrowserModule,

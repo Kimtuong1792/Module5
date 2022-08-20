@@ -6,7 +6,7 @@ import {CustomerType} from "../../model/customerType";
 import {CustomerTypeService} from "../../service/customerType.service";
 
 @Component({
-  selector: 'app-edit',
+  selector: 'app-editFacility',
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css']
 })
