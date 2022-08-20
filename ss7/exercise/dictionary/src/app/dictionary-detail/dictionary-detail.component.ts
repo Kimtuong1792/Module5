@@ -10,8 +10,8 @@ import {ActivatedRoute, ParamMap, Router} from "@angular/router";
   styleUrls: ['./dictionary-detail.component.css']
 })
 export class DictionaryDetailComponent implements OnInit {
-  // @ts-ignore
-  wordDetail: IWord;
+
+  wordDetail: IWord [] = [];
   private paramMap: any;
 
   constructor(private dictionaryService: DictionaryService,
