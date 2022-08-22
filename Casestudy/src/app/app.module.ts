@@ -18,6 +18,7 @@ import { CreateContractComponent } from './contract/create-contract/create-contr
 import { CreateFacilityComponent } from './facility/create-facility/create-facility.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { EditFacilityComponent } from './facility/edit-facility/edit-facility.component';
+import {AppRoutingModule} from "./app-routing.module";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -34,6 +35,8 @@ const routes: Routes = [
   {path: 'customer/editCustomer/:id' , component: EditComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
 ];
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +60,8 @@ const routes: Routes = [
         BrowserModule,
         RouterModule,
         RouterModule.forRoot(routes),
-        ReactiveFormsModule
+        ReactiveFormsModule,
+      AppRoutingModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
