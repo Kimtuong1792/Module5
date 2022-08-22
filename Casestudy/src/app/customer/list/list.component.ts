@@ -16,7 +16,6 @@ export class ListComponent implements OnInit {
   }
 
   getCustomerDelete(temp: Customer) {
-    console.log(temp)
     this.customerDelete = temp;
   }
 

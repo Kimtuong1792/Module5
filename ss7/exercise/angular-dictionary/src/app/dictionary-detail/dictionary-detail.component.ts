@@ -11,14 +11,14 @@ import {IWord} from '../model/IWord';
 })
 export class DictionaryDetailComponent implements OnInit {
 
-  detailList: IWord;
+  details: IWord;
   dictionaryForm: FormGroup;
 
   constructor(private activatedRoute: ActivatedRoute,
               private dictionaryService: DictionaryService) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       const word = paramMap.get('word');
-      this.detailList = this.dictionaryService.translate(word);
+      this.details = this.dictionaryService.translate(word);
     });
   }
 

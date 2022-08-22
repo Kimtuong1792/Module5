@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {ProductService} from '../../service/product.service';
 import {ActivatedRoute, ParamMap} from '@angular/router';
+import {Product} from '../../model/product';
 
 @Component({
   selector: 'app-product-edit',
@@ -23,17 +24,18 @@ export class ProductEditComponent implements OnInit {
         price: new FormControl(product.price),
         description: new FormControl(product.description),
       });
-    });  }
+    });
+  }
 
   ngOnInit(): void {
   }
 
-  private getProduct(id: number) {
+  getProduct(id: number): Product {
     return this.productService.findById(id);
   }
-  updateProduct(id: number) {
+
+  updateProduct(id: number): void {
     const product = this.productForm.value;
     this.productService.updateProduct(id, product);
-    alert('Cập nhật thành công');
   }
 }

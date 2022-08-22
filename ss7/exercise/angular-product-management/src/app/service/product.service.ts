@@ -32,24 +32,24 @@ export class ProductService {
     description: 'Like new'
   }];
   constructor() { }
-  getAll() {
+  getAll(): Product[] {
     return this.products;
   }
-  saveProduct(product) {
+  saveProduct(product): void {
     this.products.push(product);
   }
 
-  findById(id: number) {
+  findById(id: number): Product {
     return this.products.find(product => product.id === id);
   }
-  updateProduct(id: number, product: Product) {
+  updateProduct(id: number, product: Product): void {
     for (let i = 0; i < this.products.length; i++) {
       if (this.products[i].id === id) {
         this.products[i] = product;
       }
     }
   }
-  deleteProduct(id: number) {
+  deleteProduct(id: number): void {
     this.products = this.products.filter(product => {
       return product.id !== id;
     });

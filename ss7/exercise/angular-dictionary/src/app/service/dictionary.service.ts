@@ -16,11 +16,11 @@ export class DictionaryService {
   constructor() {
   }
 
-  getAll() {
+  getAll(): IWord [] {
     return this.wordList;
   }
 
-  translate(word) {
+  translate(word): IWord {
     return this.wordList.find(detailList => detailList.word === word);
   }
 }

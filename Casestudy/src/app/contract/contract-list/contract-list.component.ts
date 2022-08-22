@@ -10,7 +10,7 @@ import {contractService} from "../../service/contract.service";
 })
 export class ContractListComponent implements OnInit {
 contract:Contract[]=[];
-contractDelete:Contract={};
+contractDelete:Contract |any;
   constructor(private contracService : contractService) {
 this.contract = this.contracService.getAll();
   }
