@@ -15,9 +15,9 @@ import {ReactiveFormsModule} from '@angular/forms';
     AppComponent,
     CategoryComponent,
     ProductComponent,
-    ProductCreateComponent,
-    ProductEditComponent,
-    ProductListComponent
+    // ProductCreateComponent,
+    // ProductEditComponent,
+    // ProductListComponent
   ],
     imports: [
         BrowserModule,
