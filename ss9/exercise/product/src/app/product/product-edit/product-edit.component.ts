@@ -4,7 +4,7 @@ import {ActivatedRoute, ParamMap} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Category} from '../../model/category';
 import {CategoryService} from '../../service/category.service';
-
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-product-edit',
   templateUrl: './product-edit.component.html',
@@ -17,7 +17,7 @@ export class ProductEditComponent implements OnInit {
 
   constructor(private productService: ProductService,
               private categoryService: CategoryService,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute, private router: Router) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
       this.getProduct(this.id);
@@ -47,6 +47,7 @@ export class ProductEditComponent implements OnInit {
     this.productService.updateProduct(id, product).subscribe(() => {
       alert('Cập nhật thành công');
     });
+    this.router.navigate(['/product/list']);
   }
 
   getAllCategory() {

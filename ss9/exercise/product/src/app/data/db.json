@@ -1,10 +1,6 @@
 {
   "categories": [
     {
-      "name": "IPhone7",
-      "id": 1
-    },
-    {
       "name": "Samsung",
       "id": 2
     },
@@ -28,22 +24,40 @@
       }
     },
     {
-      "id": 2,
-      "name": "IPhone 8",
-      "price": 7540000,
-      "description": "98%",
+      "name": "samsung",
+      "price": 1000,
+      "description": "new",
       "category": {
         "id": "2"
-      }
+      },
+      "id": 2
     },
-    { "id": 3,
-      "name": "IPhone 11 Pro",
-      "price": 1895000,
-      "description": "Like new",
+    {
+      "name": "oppo",
+      "price": 2000,
+      "description": "old",
       "category": {
         "id": "5"
-      }
-
+      },
+      "id": 3
+    },
+    {
+      "name": "abc",
+      "price": 1000,
+      "description": "ok",
+      "category": {
+        "id": "2"
+      },
+      "id": 4
+    },
+    {
+      "name": "ggg",
+      "price": 111,
+      "description": "ok",
+      "category": {
+        "id": "2"
+      },
+      "id": 5
     }
   ]
 }

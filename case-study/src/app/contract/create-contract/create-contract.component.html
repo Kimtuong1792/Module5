@@ -1,0 +1,68 @@
+<div class="super_container">
+  <div class="home" style="height: 514px">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/about.jpg"
+         data-speed="0.8">
+      <img src="assets/images/contact.jpg" alt="" height="500px" width="110%">
+    </div>
+    <div class="home_container">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="home_content text-center">
+              <div class="home_title"><h1>Contract</h1></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="vc_empty_space" style="height: 35px"><span class="vc_empty_space_inner"></span></div>
+<div style="padding-left: 60px">
+  <h2> Add new contract </h2>
+  <div class="vc_empty_space" style="height: 35px"><span class="vc_empty_space_inner"></span></div>
+  <div id="form">
+    <form  [formGroup]="contractForm" (ngSubmit)="submit()">
+      <div class="col-6">
+        <h5>ID</h5>
+        <input formControlName="id" name="id"/>
+        <p style="color: red" *ngIf="contractForm.controls['id'].hasError('required') && contractForm.touched">id cannot be left blank</p>
+        <div class="mb-3">
+          <h5 class="form-label">Start Date</h5>
+          <input type="date" class="form-control" width="500" formControlName="starDate" name="starDate">
+          <p style="color: red" *ngIf="contractForm.controls['starDate'].hasError('required') && contractForm.touched">Start Day cannot be left blank</p>
+        </div>
+        <div class="mb-3">
+          <h5 class="form-label" >End Date</h5>
+          <input type="date" class="form-control"  width="500" formControlName="endDate" name="endDate">
+          <p style="color: red" *ngIf="contractForm.controls['endDate'].hasError('required') && contractForm.touched">End Day cannot be left blank</p>
+        </div>
+        <div class="mb-3">
+          <h5 class="form-label">Deposit</h5>
+          <input type="number" class="form-control"  width="500" formControlName="deposit" name="deposit">
+          <p style="color: red" *ngIf="contractForm.controls['deposit'].hasError('required') && contractForm.touched">deposit cannot be left blank</p>
+          <p style="color: red" *ngIf="contractForm.controls['deposit'].hasError('pattern') && contractForm.touched">The deposit must be a positive integer.</p>
+        </div>
+        <div class="mb-3">
+          <h5 class="form-label">Customer</h5>
+        <input type="text" class="form-control" width="500" formControlName="customer" name="customer">
+          <p style="color: red" *ngIf="contractForm.controls['customer'].hasError('required') && contractForm.touched">customer cannot be left blank</p>
+        </div>
+        <div class="mb-3">
+          <h5 class="form-label">Facility</h5>
+          <select class="form-control" formControlName="facility" name="facility">
+            <option value="Villa">Villa</option>
+            <option value="House">House</option>
+            <option value="Room">Room</option>
+          </select>
+          <p style="color: red" *ngIf="contractForm.controls['facility'].hasError('required') && contractForm.touched">facility cannot be left blank</p>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary" [disabled]="!contractForm.valid">Save</button>
+
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+<div class="vc_empty_space" style="height: 35px"><span class="vc_empty_space_inner"></span></div>

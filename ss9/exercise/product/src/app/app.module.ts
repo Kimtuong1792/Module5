@@ -3,26 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CategoryComponent } from './category/category.component';
-import { ProductComponent } from './product/product.component';
-import { ProductCreateComponent } from './product/product-create/product-create.component';
-import { ProductEditComponent } from './product/product-edit/product-edit.component';
-import { ProductListComponent } from './product/product-list/product-list.component';
-import {ReactiveFormsModule} from '@angular/forms';
 
+import {HttpClientModule} from '@angular/common/http';
+// @ts-ignore
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
-    CategoryComponent,
-    ProductComponent,
+    // CategoryComponent,
+    // ProductComponent,
     // ProductCreateComponent,
     // ProductEditComponent,
     // ProductListComponent
   ],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ReactiveFormsModule
+      BrowserModule,
+      AppRoutingModule,
+      HttpClientModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -32,9 +32,10 @@ export class ProductCreateComponent implements OnInit {
       id: product.category
     };
     this.productService.saveProduct(product).subscribe(() => {
-      alert('Tạo thành công');
+      // alert('Tạo thành công');
       this.productForm.reset();
     }, e => console.log(e));
+
   }
 
   getAllCategory() {
