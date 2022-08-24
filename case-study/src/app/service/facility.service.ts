@@ -1,158 +1,47 @@
 import {Injectable} from '@angular/core';
 import {Facility} from "../model/facility";
+import {environment} from "../../environments/environment";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+
+const API_URL = `${environment.url}`
 
 @Injectable({
   providedIn: 'root'
 })
 export class FacilityService {
-  facilities: Facility[] = [
-    {
-      id: 1,
-      name: 'OCEAN SUITE',
-      facilityType: {id: 1, name: 'Villa'},
-      rentType: {id: 1, name: 'Hours'},
-      area: 23000,
-      cost: 30000,
-      maxPeople: 4,
-      standardRoom: 'Vip',
-      descriptionOtherConvenience: 'There is a grill',
-      poolArea: 2300,
-      numberOfFloors: 2,
-      facilityFree: 'No',
-      image: "https://poliva.vn/wp-content/uploads/2019/10/phong-ngu-khach-san-dep-nhat-the-gioi-1.jpg",
-    },
-    {
-      id: 2,
-      name: 'OCEAN STUDIO SUITE',
-      facilityType: {id: 1, name: 'Villa'},
-      rentType: {id: 1, name: 'Hours'},
-      area: 25000,
-      cost: 50000,
-      maxPeople: 5,
-      standardRoom: 'Vip',
-      descriptionOtherConvenience: 'There is a grill',
-      poolArea: 2300,
-      numberOfFloors: 2,
-      facilityFree: 'No',
-      image: "https://everon.com/upload_images/images/noi-that-phong-ngu-khach-san/phong-ngu-khach-san-2.jpg",
-    },
-    {
-      id: 3,
-      name: 'OCEAN DELUXE',
-      facilityType: {id: 1, name: 'Villa'},
-      rentType: {id: 1, name: 'Hours'},
-      area: 23000,
-      cost: 30000,
-      maxPeople: 4,
-      standardRoom: 'Vip',
-      descriptionOtherConvenience: 'There is a grill',
-      poolArea: 2300,
-      numberOfFloors: 2,
-      facilityFree: 'No',
-      image: "https://dyf.vn/wp-content/uploads/2021/12/giuong-doi-khach-san-lon.jpg",
-    },
-    {
-      id: 4,
-      name: 'GARDEN SUPERIOR',
-      facilityType: {id: 1, name: 'Villa'},
-      rentType: {id: 1, name: 'Hours'},
-      area: 23000,
-      cost: 30000,
-      maxPeople: 4,
-      standardRoom: 'Vip',
-      descriptionOtherConvenience: 'There is a grill',
-      poolArea: 2300,
-      numberOfFloors: 2,
-      facilityFree: 'No',
-      image: "https://menhadep.com/wp-content/uploads/thiet-ke-phong-khach-san.jpg",
-    },
-    {
-      id: 5,
-      name: 'POOL VILLAS',
-      facilityType: {id: 1, name: 'Villa'},
-      rentType: {id: 1, name: 'Hours'},
-      area: 23000,
-      cost: 30000,
-      maxPeople: 4,
-      standardRoom: 'Vip',
-      descriptionOtherConvenience: 'There is a grill',
-      poolArea: 2300,
-      numberOfFloors: 2,
-      facilityFree: 'No',
-      image: "https://dyf.vn/wp-content/uploads/2021/12/giuong-doi-khach-san-lon.jpg",
-    },
-    {
-      id: 6,
-      name: 'PRESIDENTIAL SUITE',
-      facilityType: {id: 1, name: 'Villa'},
-      rentType: {id: 1, name: 'Hours'},
-      area: 23000,
-      cost: 30000,
-      maxPeople: 4,
-      standardRoom: 'Normal',
-      descriptionOtherConvenience: 'There is a grill',
-      poolArea: 2300,
-      numberOfFloors: 2,
-      facilityFree: 'No',
-      image: "https://menhadep.com/wp-content/uploads/phong-ngu-khach-san.jpg",
-    },
-    {
-      id: 7,
-      name: 'BEACH FRONT VILLAS',
-      facilityType: {id: 1, name: 'Villa'},
-      rentType: {id: 1, name: 'Hours'},
-      area: 23000,
-      cost: 30000,
-      maxPeople: 4,
-      standardRoom: 'Normal',
-      descriptionOtherConvenience: 'There is a grill',
-      poolArea: 2300,
-      numberOfFloors: 2,
-      facilityFree: 'No',
-      image: "https://noithattrevietnam.com/uploaded/2019/12/1-thiet-ke-phong-ngu-khach-san%20%282%29.jpg",
-    },
-    {
-      id: 8,
-      name: 'LAGOON SUPERIOR',
-      facilityType: {id: 1, name: 'Villa'},
-      rentType: {id: 1, name: 'Hours'},
-      area: 23000,
-      cost: 30000,
-      maxPeople: 4,
-      standardRoom: 'Normal',
-      descriptionOtherConvenience: 'There is a grill',
-      poolArea: 2300,
-      numberOfFloors: 2,
-      facilityFree: 'No',
-      image: "https://i.pinimg.com/736x/af/e6/68/afe668580604a3377ecf065ac86a9a5a.jpg",
-    }]
 
-  constructor() {
+
+  constructor(private htttpClient : HttpClient) {
   }
 
-  getAll() {
-    return this.facilities;
+  getAll(): Observable<Facility[]> {
+    return this.htttpClient.get<Facility[]>(API_URL + '/facility');
   }
 
-  save(facility: Facility) {
-    this.facilities.push(facility);
+  save(facility: Facility): Observable<Facility> {
+    return this.htttpClient.post<Facility>(API_URL + '/facility' , facility)
+    // this.facilities.push(facility);
   }
 
-  findById(id: number) {
-    return this.facilities.find(facility => facility.id === id);
+  findById(id: number): Observable<Facility> {
+    return this.htttpClient.get<Facility>(API_URL + `/facility/${id}`);
+    // return this.facilities.find(facility => facility.id === id);
 
   }
 
-  updateFacility(id: number, facility: Facility) {
-    for (let i = 0; i < this.facilities.length; i++) {
-      if (this.facilities[i].id === id) {
-        this.facilities[i] = facility;
-      }
-    }
+  updateFacility(id: number, facility: Facility): Observable<Facility> {
+    return this.htttpClient.put<Facility>(API_URL + `/facility/${id}` , facility );
+    // for (let i = 0; i < this.facilities.length; i++) {
+    //   if (this.facilities[i].id === id) {
+    //     this.facilities[i] = facility;
+    //   }
+    // }
   }
 
-  deleteFacility(id: number) {
-    let index = this.facilities.findIndex(element => element.id === id);
-    this.facilities.splice(index, 1);
+  deleteFacility(id: number): Observable<Facility> {
+    return this.htttpClient.delete<Facility>(API_URL + `/facility/${id}`);
+    // let index = this.facilities.findIndex(element => element.id === id);
+    // this.facilities.splice(index, 1);
   }
 }

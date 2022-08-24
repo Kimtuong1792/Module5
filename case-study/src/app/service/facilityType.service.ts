@@ -1,24 +1,25 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {FacilityType} from "../model/facilityType";
+import {environment} from "../../environments/environment";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+
+const API_URL = `${environment.url}`
 
 @Injectable({
   providedIn: 'root'
 })
 export class FacilityTypeService {
 
-  constructor() { }
-
-  facilityTypeList: FacilityType[] = [
-    {id: 1, name: 'Villa'},
-    {id: 2, name: 'House'},
-    {id: 3, name: 'Room'}
-  ];
-
-  getALl() {
-    return this.facilityTypeList;
+  constructor(private httpClient: HttpClient) {
   }
 
-  findById(id: number) {
-    return this.facilityTypeList.find(element => element.id === id);
+
+  getALl(): Observable<FacilityType[]> {
+    return this.httpClient.get<FacilityType[]>(API_URL + '/facilityType');
+  }
+
+  findById(id: number): Observable<FacilityType> {
+    return this.httpClient.get<FacilityType>(API_URL + `facilityType/${id}`);
   }
 }

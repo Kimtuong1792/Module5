@@ -125,7 +125,7 @@
         </button>
       </div>
       <div class="modal-body">
-        Are you sure you want to delete?
+        Are you sure you want to delete?<span *ngIf="facilitiesDelete">{{facilitiesDelete.name}}</span>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

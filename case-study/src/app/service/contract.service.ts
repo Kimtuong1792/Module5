@@ -1,31 +1,26 @@
 import {Injectable} from "@angular/core";
 import {Contract} from "../model/contract";
+import {environment} from "../../environments/environment";
+import {Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+
+const API_URL = `${environment.url}`;
 
 @Injectable({
   providedIn: 'root'
 })
 export class contractService {
-  contract: Contract[] = [];
-  constructor() {
-    this.contract.push({id:1, facility:"Villa No Beach Front", customer:"Le Thuan Dat" ,
-      starDate:"2022-07-07" , endDate:"2022-07-09" ,deposit : 1000})
-    this.contract.push({id:2, facility:"House Princess 01", customer:"Truong Thi Huyen" ,
-      starDate:"2022-08-07" , endDate:"2022-08-09" ,deposit : 1000})
-    this.contract.push({id:3, facility:"Room Twin 01", customer:"Tran Nhu Mai" ,
-      starDate:"2022-08-07" , endDate:"2022-09-09" ,deposit : 1000})
-    this.contract.push({id:4, facility:"Villa No Beach Front", customer:"Le Van Binh" ,
-      starDate:"2022-09-07" , endDate:"2022-10-09" ,deposit : 1000})
-  }
-  getAll(){
-    return this.contract;
+constructor(private httpClient : HttpClient) {
+}
+  getAll(): Observable<Contract[]>{
+    return this.httpClient.get<Contract[]>(API_URL + '/contract');
   }
 
-  saveContract(contracts: any) {
-    this.contract.push(contracts);
+  saveContract(contracts: any): Observable<Contract> {
+   return this.httpClient.post<Contract>(API_URL + '/contract' , contracts );
   }
 
-  delete(id: number) {
-    let index = this.contract.findIndex(element => element.id === id);
-    this.contract.splice(index, 1);
+  delete(id: number): Observable<Contract> {
+    return this.httpClient.delete(API_URL + `/contract/${id}`);
   }
 }

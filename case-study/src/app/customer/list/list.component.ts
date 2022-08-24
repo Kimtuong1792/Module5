@@ -12,7 +12,10 @@ export class ListComponent implements OnInit {
   customerDelete: Customer | any;
 
   constructor(private customerService: CustomerService) {
-    this.customer = this.customerService.getAll();
+     this.customerService.getAll().subscribe(customers => {
+       this.customer = customers;
+       console.log(this.customer)
+     })
   }
 
   getCustomerDelete(temp: Customer) {
@@ -24,6 +27,7 @@ export class ListComponent implements OnInit {
   }
 
   delete(id: number) {
-    return this.customerService.deleteCustomer(id)
+    return this.customerService.deleteCustomer(id).subscribe(()=>{ this.ngOnInit()
+    })
   }
 }

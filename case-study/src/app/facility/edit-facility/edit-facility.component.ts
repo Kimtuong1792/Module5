@@ -24,31 +24,34 @@ export class EditFacilityComponent implements OnInit, OnChanges {
               private rentTypeService: RentTypeService,
               private activatedRoute: ActivatedRoute,
               private router: Router) {
+
+
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = Number(this.activatedRoute.snapshot.paramMap.get('id'))
       console.log(this.id);
-      const facility = facilityService.findById(this.id);
-      if(facility != null) {
-        this.rentType = this.rentTypeService.getAll();
-        if(this.rentType != null) {
+      facilityService.findById(this.id).subscribe(facilitys => {
+        if (facilitys != null) {
+
+          if (this.rentType != null) {
             this.facilityForm = new FormGroup({
-              id: new FormControl(facility.id),
-              name: new FormControl(facility.name ,[Validators.required , Validators.pattern("^([A-Z\\p{L}]{1}[a-z\\p{L}]*)+(\\s([A-Z\\p{L}]{1}[a-z\\p{L}]*))*$")]  ),
-              area: new FormControl(facility.area ,[Validators.required]  ),
-              cost: new FormControl(facility.cost , [Validators.required] ),
-              maxPeople: new FormControl(facility.maxPeople , [Validators.required] ),
-              standardRoom: new FormControl(facility.standardRoom  , [Validators.required] ),
-              descriptionOtherConvenience: new FormControl(facility.descriptionOtherConvenience , [Validators.required]  ),
-              poolArea: new FormControl(facility.poolArea ,[Validators.required, Validators.pattern("^[1-9]+\\d*")]  ),
-              numberOfFloors: new FormControl(facility.numberOfFloors , [Validators.required, Validators.pattern("^[1-9]+\\d*")]  ),
-              facilityFree: new FormControl(facility.facilityFree , [Validators.required] ),
-              rentType: new FormControl(facility.rentType?.id , [Validators.required]  ),
-              image: new FormControl(facility.image , [Validators.required]  ),
-              facilityType: new FormControl(facility.facilityType?.name , [Validators.required] )
+              id: new FormControl(facilitys.id),
+              name: new FormControl(facilitys.name, [Validators.required, Validators.pattern("^([A-Z\\p{L}]{1}[a-z\\p{L}]*)+(\\s([A-Z\\p{L}]{1}[a-z\\p{L}]*))*$")]),
+              area: new FormControl(facilitys.area, [Validators.required]),
+              cost: new FormControl(facilitys.cost, [Validators.required]),
+              maxPeople: new FormControl(facilitys.maxPeople, [Validators.required]),
+              standardRoom: new FormControl(facilitys.standardRoom, [Validators.required]),
+              descriptionOtherConvenience: new FormControl(facilitys.descriptionOtherConvenience, [Validators.required]),
+              poolArea: new FormControl(facilitys.poolArea, [Validators.required, Validators.pattern("^[1-9]+\\d*")]),
+              numberOfFloors: new FormControl(facilitys.numberOfFloors, [Validators.required, Validators.pattern("^[1-9]+\\d*")]),
+              facilityFree: new FormControl(facilitys.facilityFree, [Validators.required]),
+              rentType: new FormControl(facilitys.rentType?.id, [Validators.required]),
+              image: new FormControl(facilitys.image, [Validators.required]),
+              facilityType: new FormControl(facilitys.facilityType?.name, [Validators.required])
             })
-            this.facilityType = this.facilityTypeService.getALl();
+
+          }
         }
-      }
+      });
 
 
     });
@@ -63,7 +66,7 @@ export class EditFacilityComponent implements OnInit, OnChanges {
         // @ts-ignore
         id: new FormControl(facility.id),
         // @ts-ignore
-        name: new FormControl(facility.name , [Validators.required]),
+        name: new FormControl(facility.name, [Validators.required]),
         // @ts-ignore
         area: new FormControl(facility.area),
         // @ts-ignore
@@ -91,7 +94,14 @@ export class EditFacilityComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    this.rentTypeService.getAll().subscribe(rentTypes => {
+      this.rentType = rentTypes;
+    });
+    this.facilityTypeService.getALl().subscribe(facilityTypes => {
+      this.facilityType = facilityTypes;
+    });
   }
+
 
   updateFacility(id: number) {
     const facility = this.facilityForm.value;

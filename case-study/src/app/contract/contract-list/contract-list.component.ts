@@ -12,7 +12,9 @@ export class ContractListComponent implements OnInit {
 contract:Contract[]=[];
 contractDelete:Contract |any;
   constructor(private contracService : contractService) {
-this.contract = this.contracService.getAll();
+this.contracService.getAll().subscribe(contracts =>{
+  this.contract = contracts;
+})
   }
 
   ngOnInit(): void {
@@ -22,6 +24,6 @@ this.contract = this.contracService.getAll();
   }
 
   delete(id: number) {
-    return this.contracService.delete(id)
+    return this.contracService.delete(id).subscribe(()=>{this.ngOnInit()})
   }
 }

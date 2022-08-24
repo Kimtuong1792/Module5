@@ -3,95 +3,124 @@
     {
       "id": 1,
       "name": "Diamond"
-
     },
     {
       "id": 2,
       "name": "Platinium"
-
     },
     {
       "id": 3,
       "name": "Gold"
-
     },
     {
       "id": 4,
       "name": "Silver"
-
     },
     {
       "id": 5,
       "name": "Member"
-
     }
   ],
-  "customers": [
+  "customer": [
     {
       "id": 1,
       "name": "Lê Thuận Đạt",
-      "birthDay": "12-20-1990",
-      "gender": "Nam",
+      "birthday": "1990-11-11",
+      "gender": "Male",
       "idCard": "982379821",
-      "phone": "0911111111",
+      "numberPhone": "0911111111",
       "email": "nam@gmail.com",
       "address": "Đà Nẵng",
-      "type": {
+      "customerType": {
+        "id": 1,
         "name": "Diamond"
       }
     },
     {
       "id": 2,
       "name": "Lê Thị Linh",
-      "birthDay": "12-20-1990",
-      "gender": "Nữ",
+      "birthday": "1990-11-11",
+      "gender": "Female",
       "idCard": "982379821",
-      "phone": "0911111111",
+      "numberPhone": "0911111111",
       "email": "nam@gmail.com",
       "address": "Đà Nẵng",
-      "type": {
+      "customerType": {
+        "id": 1,
         "name": "Diamond"
       }
     },
     {
       "id": 3,
       "name": "Trương Ngọc Huyền",
-      "birthDay": "12-20-1990",
-      "gender": "Nam",
+      "birthday": "1990-11-11",
+      "gender": "Female",
       "idCard": "982379821",
-      "phone": "0911111111",
+      "numberPhone": "0911111111",
       "email": "nam@gmail.com",
       "address": "Quảng Nam",
-      "type": {
-        "name": "Platinum"
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
       }
     },
     {
       "id": 4,
       "name": "Nguyễn Xuân Phúc",
-      "birthDay": "12-20-1990",
-      "gender": "Nam",
+      "birthday": "2022-08-04",
+      "gender": "Male",
       "idCard": "982379821",
-      "phone": "0911111111",
+      "numberPhone": "0911111111",
       "email": "nam@gmail.com",
       "address": "Đà Nẵng",
-      "type": {
-        "name": "Gold"
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
       }
     },
     {
       "id": 5,
       "name": "Lê Văn Nam",
-      "birthDay": "12-20-1990",
-      "gender": "Nam",
+      "birthday": "2022-08-04",
+      "gender": "Male",
       "idCard": "982379821",
-      "phone": "0911111111",
+      "numberPhone": "0911111111",
       "email": "nam@gmail.com",
       "address": "Đà Nẵng",
-      "type": {
-        "name": "Silver"
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
       }
-    }],
+    },
+    {
+      "id": 8,
+      "name": "Minh Tâm",
+      "birthday": "2022-08-04",
+      "gender": "Male",
+      "idCard": 122222999,
+      "numberPhone": "0999999999",
+      "email": "trankimtuongtk@gmail.com",
+      "address": "Da Nang",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Minh C",
+      "birthday": "2022-08-10",
+      "gender": "Female",
+      "idCard": 122222999,
+      "numberPhone": "0999999999",
+      "email": "levanan@gmail.com",
+      "address": "Da Nang",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      }
+    }
+  ],
   "rentType": [
     {
       "id": 1,
@@ -124,5 +153,82 @@
       "name": "Room"
     }
   ],
-
+  "facility": [
+    {
+      "id": 1,
+      "name": "OCEAN SUITE",
+      "area": 1000,
+      "cost": 250,
+      "maxPeople": 2,
+      "standardRoom": "nomal",
+      "descriptionOtherConvenience": "There is a grill",
+      "poolArea": 2300,
+      "numberOfFloors": 2,
+      "facilityFree": "no",
+      "image": "https://poliva.vn/wp-content/uploads/2019/10/phong-ngu-khach-san-dep-nhat-the-gioi-1.jpg",
+      "rentType": {
+        "id": 1,
+        "name": "Hours"
+      },
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 2,
+      "name": "OCEAN SUITE",
+      "area": 1000,
+      "cost": 250,
+      "maxPeople": 2,
+      "standardRoom": "nomal",
+      "descriptionOtherConvenience": "There is a grill",
+      "poolArea": 2300,
+      "numberOfFloors": 2,
+      "facilityFree": "no",
+      "image": "https://everon.com/upload_images/images/noi-that-phong-ngu-khach-san/phong-ngu-khach-san-2.jpg",
+      "rentType": {
+        "id": 1,
+        "name": "Hours"
+      },
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      }
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "facility": "Villa No Beach Front",
+      "customer": "Le Thuan Dat",
+      "starDate": "2022-07-07",
+      "endDate": "2022-07-09",
+      "deposit": 1000
+    },
+    {
+      "id": 2,
+      "facility": "House Princess 01",
+      "customer": "Truong Thi Huyen",
+      "starDate": "2022-07-07",
+      "endDate": "2022-07-09",
+      "deposit": 0
+    },
+    {
+      "id": 3,
+      "facility": "Room Twin 01",
+      "customer": "Tran Nhu Mai",
+      "starDate": "2022-07-07",
+      "endDate": "2022-07-09",
+      "deposit": 2000
+    },
+    {
+      "id": 4,
+      "facility": "Villa No Beach Front",
+      "customer": "Le Van Binh",
+      "starDate": "2022-07-07",
+      "endDate": "2022-07-09",
+      "deposit": 1000
+    }
+  ]
 }

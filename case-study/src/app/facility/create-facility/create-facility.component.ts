@@ -55,9 +55,11 @@ export class CreateFacilityComponent implements OnInit, OnChanges {
   }
   submit() {
     const facility = this.facilityForm.value;
-    this.facilityService.save(facility);
-    this.facilityForm.reset();
-    this.router.navigate(['/facility']);
+    this.facilityService.save(facility).subscribe(()=>{
+      this.router.navigate(['/facility']);
+    });
+
+
   }
 
   type = "";
