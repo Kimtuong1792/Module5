@@ -1,0 +1,75 @@
+<div class="super_container">
+  <div class="home" style="height: 514px">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/about.jpg"
+         data-speed="0.8">
+      <img src="assets/images/contact.jpg" alt="" height="500px" width="110%">
+    </div>
+    <div class="home_container">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="home_content text-center">
+              <div class="home_title"><h1>Contract</h1></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<table class="table">
+  <thead>
+
+  <tr style="background-color: #2e3f61 ; color: white">
+    <th>STT</th>
+    <th>facility</th>
+    <th>customer</th>
+    <th>startDate</th>
+    <th>endDate</th>
+    <th>deposit</th>
+    <th>Total</th>
+    <th>Actions</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of contract">
+    <td>{{item.id}}</td>
+    <td>{{item.facility}}</td>
+    <td>{{item.customer}}</td>
+    <td>{{item.starDate}}</td>
+    <td>{{item.endDate}}</td>
+    <td>{{item.deposit |currency}}</td>
+    <td>{{item.total}}</td>
+    <td><button type="button" class="btn btn-primary ">Edit</button></td>
+    <td>   <button type="button" class="btn btn-danger" (click)="getContractDelete(item)"
+                   data-toggle="modal" data-target="#exampleModal">
+      Delete
+    </button></td>
+  </tr>
+
+  </tbody>
+</table>
+  <div class="vc_empty_space" style="height: 35px"><span class="vc_empty_space_inner"></span></div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p style="font-size: 15px; font-weight: 600"> do you want to delete contract of <span *ngIf="contractDelete">  {{contractDelete.customer}}</span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="delete(contractDelete.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

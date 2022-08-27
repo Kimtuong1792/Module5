@@ -1,0 +1,35 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "Iphone X",
+      "price": "1000",
+      "description": "new"
+    },
+    {
+      "id": 2,
+      "name": "Iphone 11",
+      "price": "1000",
+      "description": "new"
+    },
+    {
+      "id": 3,
+      "name": "Iphone 12",
+      "price": "1000",
+      "description": "new"
+    },
+    {
+      "id": 4,
+      "name": "Iphone 13",
+      "price": "1000",
+      "description": "new"
+    },
+    {
+      "id": 5,
+      "name": "Samsung",
+      "price": "1000",
+      "description": "new"
+    }
+  ]
+
+}

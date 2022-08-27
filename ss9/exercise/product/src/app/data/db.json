@@ -1,0 +1,63 @@
+{
+  "categories": [
+    {
+      "name": "Samsung",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "LG"
+    },
+    {
+      "id": 5,
+      "name": "SS"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "IPhone X",
+      "price": 968000,
+      "description": "97%",
+      "category": {
+        "id": "2"
+      }
+    },
+    {
+      "name": "samsung",
+      "price": 1000,
+      "description": "new",
+      "category": {
+        "id": "2"
+      },
+      "id": 2
+    },
+    {
+      "name": "oppo",
+      "price": 2000,
+      "description": "old",
+      "category": {
+        "id": "5"
+      },
+      "id": 3
+    },
+    {
+      "name": "abc",
+      "price": 1000,
+      "description": "ok",
+      "category": {
+        "id": "2"
+      },
+      "id": 4
+    },
+    {
+      "name": "ggg",
+      "price": 111,
+      "description": "ok",
+      "category": {
+        "id": "2"
+      },
+      "id": 5
+    }
+  ]
+}

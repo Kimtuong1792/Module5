@@ -1,0 +1,340 @@
+{
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "name": "Lê Thuận Đạt",
+      "birthday": "1990-11-11",
+      "gender": "Male",
+      "idCard": "982379821",
+      "numberPhone": "0911111111",
+      "email": "nam@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Lê Thị Linh",
+      "birthday": "1990-11-11",
+      "gender": "Female",
+      "idCard": "982379821",
+      "numberPhone": "0911111111",
+      "email": "nam@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Trương Ngọc Huyền",
+      "birthday": "1990-11-11",
+      "gender": "Female",
+      "idCard": "982379821",
+      "numberPhone": "0911111111",
+      "email": "nam@gmail.com",
+      "address": "Quảng Nam",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Nguyễn Xuân Phúc",
+      "birthday": "2022-08-04",
+      "gender": "Male",
+      "idCard": "982379821",
+      "numberPhone": "0911111111",
+      "email": "nam@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Lê Văn Nam",
+      "birthday": "2022-08-04",
+      "gender": "Male",
+      "idCard": "982379821",
+      "numberPhone": "0911111111",
+      "email": "nam@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Minh Tâm",
+      "birthday": "2022-08-04",
+      "gender": "Male",
+      "idCard": 122222999,
+      "numberPhone": "0999999999",
+      "email": "trankimtuongtk@gmail.com",
+      "address": "Da Nang",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Minh Nhat",
+      "birthday": "2022-08-03",
+      "gender": "LGBT",
+      "idCard": 122222222,
+      "numberPhone": "0999999999",
+      "email": "trankimtuongtk@gmail.com",
+      "address": "Da Nang",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Minh Tân",
+      "birthday": "2022-08-03",
+      "gender": "Female",
+      "idCard": 121231322,
+      "numberPhone": "0999999999",
+      "email": "levanan@gmail.com",
+      "address": "Da Nang",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Minh Nhat D",
+      "birthday": "2022-08-27",
+      "gender": "Female",
+      "idCard": 121231322,
+      "numberPhone": "0999999999",
+      "email": "trankimtuongtk@gmail.com",
+      "address": "Da Nang",
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      }
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "name": "Hours"
+    },
+    {
+      "id": 2,
+      "name": "Day"
+    },
+    {
+      "id": 3,
+      "name": "Month"
+    },
+    {
+      "id": 4,
+      "name": "Year"
+    }
+  ],
+  "facilityType": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
+    }
+  ],
+  "facility": [
+    {
+      "id": 1,
+      "facilityType": {
+        "id": 3,
+        "name": "Room"
+      },
+      "name": "OCEAN SUITE",
+      "area": 1000,
+      "cost": 250,
+      "maxPeople": 2,
+      "standardRoom": "nomal",
+      "descriptionOtherConvenience": "There is a grill",
+      "poolArea": 2300,
+      "numberOfFloors": 2,
+      "facilityFree": "no",
+      "rentType": {
+        "id": 4,
+        "name": "Year"
+      },
+      "image": "https://poliva.vn/wp-content/uploads/2019/10/phong-ngu-khach-san-dep-nhat-the-gioi-1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "OCEAN SUITE",
+      "area": 1000,
+      "cost": 250,
+      "maxPeople": 2,
+      "standardRoom": "nomal",
+      "descriptionOtherConvenience": "There is a grill",
+      "poolArea": 2300,
+      "numberOfFloors": 2,
+      "facilityFree": "no",
+      "image": "https://everon.com/upload_images/images/noi-that-phong-ngu-khach-san/phong-ngu-khach-san-2.jpg",
+      "rentType": {
+        "id": 1,
+        "name": "Hours"
+      },
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 3,
+      "name": "VILLA VIP",
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      },
+      "area": 1000,
+      "cost": 1000,
+      "maxPeople": 2,
+      "standardRoom": "nomal",
+      "descriptionOtherConvenience": "no",
+      "poolArea": 2000,
+      "numberOfFloors": 3,
+      "facilityFree": "",
+      "rentType": {
+        "id": 1,
+        "name": "Hours"
+      },
+      "image": "data:image/jpeg;base64,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"
+    },
+    {
+      "id": 4,
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      },
+      "name": "ádad",
+      "area": 1212,
+      "cost": 2121,
+      "maxPeople": 2121,
+      "standardRoom": "2121",
+      "descriptionOtherConvenience": "2121",
+      "poolArea": 777,
+      "numberOfFloors": 212,
+      "facilityFree": "",
+      "rentType": {
+        "id": 3,
+        "name": "Month"
+      },
+      "image": "121"
+    },
+    {
+      "id": 5,
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      },
+      "name": "eee",
+      "area": 444,
+      "cost": 44,
+      "maxPeople": 4,
+      "standardRoom": "4",
+      "descriptionOtherConvenience": "4",
+      "poolArea": 4,
+      "numberOfFloors": 4,
+      "facilityFree": "",
+      "rentType": {
+        "id": 2,
+        "name": "Day"
+      },
+      "image": ""
+    },
+    {
+      "id": 6,
+      "name": "fgdsfdgfs",
+      "facilityType": "Room",
+      "area": 1111,
+      "cost": 2132442,
+      "maxPeople": 2,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": "",
+      "numberOfFloors": "",
+      "facilityFree": "22",
+      "rentType": "Hours",
+      "image": ""
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "facility": "Villa No Beach Front",
+      "customer": "Le Thuan Dat",
+      "starDate": "2022-07-07",
+      "endDate": "2022-07-09",
+      "deposit": 1000
+    },
+    {
+      "id": 2,
+      "facility": "House Princess 01",
+      "customer": "Truong Thi Huyen",
+      "starDate": "2022-07-07",
+      "endDate": "2022-07-09",
+      "deposit": 0
+    },
+    {
+      "id": 3,
+      "facility": "Room Twin 01",
+      "customer": "Tran Nhu Mai",
+      "starDate": "2022-07-07",
+      "endDate": "2022-07-09",
+      "deposit": 2000
+    },
+    {
+      "id": 4,
+      "facility": "Villa No Beach Front",
+      "customer": "Le Van Binh",
+      "starDate": "2022-07-07",
+      "endDate": "2022-07-09",
+      "deposit": 1000
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+
+    },
+    {
+      "id": 5,
+      "name": "Member"
+
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Lê Thuận Đạt",
+      "birthDay": "12-20-1990",
+      "gender": "Nam",
+      "idCard": "982379821",
+      "phone": "0911111111",
+      "email": "nam@gmail.com",
+      "address": "Đà Nẵng",
+      "type": {
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Lê Thị Linh",
+      "birthDay": "12-20-1990",
+      "gender": "Nữ",
+      "idCard": "982379821",
+      "phone": "0911111111",
+      "email": "nam@gmail.com",
+      "address": "Đà Nẵng",
+      "type": {
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Trương Ngọc Huyền",
+      "birthDay": "12-20-1990",
+      "gender": "Nam",
+      "idCard": "982379821",
+      "phone": "0911111111",
+      "email": "nam@gmail.com",
+      "address": "Quảng Nam",
+      "type": {
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Nguyễn Xuân Phúc",
+      "birthDay": "12-20-1990",
+      "gender": "Nam",
+      "idCard": "982379821",
+      "phone": "0911111111",
+      "email": "nam@gmail.com",
+      "address": "Đà Nẵng",
+      "type": {
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Lê Văn Nam",
+      "birthDay": "12-20-1990",
+      "gender": "Nam",
+      "idCard": "982379821",
+      "phone": "0911111111",
+      "email": "nam@gmail.com",
+      "address": "Đà Nẵng",
+      "type": {
+        "name": "Silver"
+      }
+    }],
+  "rentType": [
+    {
+      "id": 1,
+      "name": "Hours"
+    },
+    {
+      "id": 2,
+      "name": "Day"
+    },
+    {
+      "id": 3,
+      "name": "Month"
+    },
+    {
+      "id": 4,
+      "name": "Year"
+    }
+  ],
+  "facilityType": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
+    }
+  ],
+
+}

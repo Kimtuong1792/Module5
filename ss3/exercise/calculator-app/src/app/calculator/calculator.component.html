@@ -1,0 +1,16 @@
+<h1> Calculator-app </h1>
+
+<div class="container">
+  <label> The first number</label>
+  <input type="number" [(ngModel)]="number1" ><br>
+  <label> The second number</label>
+  <input type="number" [(ngModel)]="number2" >
+  <h2>{{results}}</h2>
+
+  <button (click)="getValue('+')" >+</button>
+  <button (click)="getValue('-')" >-</button>
+  <button (click)="getValue('*')" >*</button>
+  <button (click)="getValue('/')" >/</button>
+</div>
+
+

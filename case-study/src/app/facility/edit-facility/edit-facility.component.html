@@ -1,0 +1,113 @@
+<div class="super_container">
+  <div class="home" style="height: 514px">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/about.jpg"
+         data-speed="0.8">
+      <img src="assets/images/contact.jpg" alt="" height="500px" width="110%">
+    </div>
+    <div class="home_container">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="home_content text-center">
+              <div class="home_title"><h1>Contract</h1></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="vc_empty_space" style="height: 35px"><span class="vc_empty_space_inner"></span></div>
+  <div style="padding-left: 100px">
+    <h2>Edit  Facility</h2>
+    <form [formGroup]="facilityForm" (ngSubmit)="updateFacility(id)">
+      <div>
+        <h5 class="form-label">Type Facility</h5>
+        <select name="facilityType" formControlName="facilityType" (change)="getType($event)" class="form-control" style="width: 500px">
+          <option *ngFor="let item of facilityType" [ngValue]="item">{{item.name}}</option>
+        </select>
+      </div>
+      <p style="color:red" *ngIf="facilityForm.controls['facilityType'].hasError('required') &&
+         facilityForm.controls['facilityType'].touched">Facility Type is required</p>
+
+      <div>
+        <h5 class="form-label">Name</h5>
+        <input type="text" formControlName="name" name="name" class="form-control" style="width: 500px">
+      </div>
+      <p style="color:red" *ngIf="facilityForm.controls['name'].hasError('required') &&
+         facilityForm.controls['name'].touched">Facility Name is required</p>
+      <p style="color:red" *ngIf="facilityForm.controls['name'].hasError('pattern') &&
+         facilityForm.controls['name'].touched">Facility Name  must not contain number</p>
+      <div>
+        <h5 class="form-label">Area</h5>
+        <input type="number" name="area" formControlName="area" class="form-control" style="width: 500px">
+      </div>
+      <p style="color:red" *ngIf="facilityForm.controls['area'].hasError('required') &&
+         facilityForm.controls['area'].touched">Area is required</p>
+
+      <div>
+        <h5 class="form-label">Prices</h5>
+        <input type="number" formControlName="cost" name="cost" class="form-control" style="width: 500px">
+      </div>
+      <p style="color:red" *ngIf="facilityForm.controls['cost'].hasError('required') &&
+         facilityForm.controls['cost'].touched">Cost is required</p>
+      <div>
+        <h5 class="form-label">Number Of People</h5>
+        <input type="number" formControlName="maxPeople" name="maxPeople" class="form-control" style="width: 500px">
+      </div>
+      <p style="color:red" *ngIf="facilityForm.controls['maxPeople'].hasError('required') &&
+         facilityForm.controls['maxPeople'].touched">Cost is required</p>
+      <div>
+        <h5 class="form-label">Rental Type</h5>
+        <select formControlName="rentType"  name="rentType" class="form-control" style="width: 500px">
+          <option *ngFor="let rt of rentType" [ngValue]="rt">{{rt.name}}</option>
+        </select>
+      </div>
+      <p style="color:red" *ngIf="facilityForm.controls['rentType'].hasError('required') &&
+         facilityForm.controls['rentType'].touched">Rent Type is required</p>
+
+      <div *ngIf="type === '0: Object' || type === '1: Object'" type="hidden">
+        <h5 class="form-label">Room Type</h5>
+        <input type="text" formControlName="standardRoom" name="standardRoom" class="form-control" style="width: 500px">
+      </div>
+      <p style="color:red" *ngIf="facilityForm.controls['standardRoom'].hasError('required') &&
+         facilityForm.controls['standardRoom'].touched">standardRoom  is required</p>
+      <div *ngIf="type == '0: Object' || type == '1: Object'" type="hidden">
+        <h5 class="form-label">Room Service Description</h5>
+        <input type="text" formControlName="descriptionOtherConvenience" class="form-control" name="descriptionOtherConvenience" style="width: 500px">
+      </div>
+      <p style="color:red" *ngIf="facilityForm.controls['descriptionOtherConvenience'].hasError('required') &&
+         facilityForm.controls['descriptionOtherConvenience'].dirty">Description Other Convenience is required</p>
+
+      <div *ngIf="type === '0: Object'" type="hidden">
+        <h5 class="form-label">Pool Area</h5>
+        <input type="number" formControlName="poolArea" class="form-control" name="poolArea" style="width: 500px">
+      </div>
+      <p style="color:red" *ngIf="facilityForm.controls['poolArea'].hasError('required') &&
+         facilityForm.controls['poolArea'].touched">Pool Area is required</p>
+      <p style="color:red" *ngIf="facilityForm.controls['poolArea'].hasError('pattern') &&
+         facilityForm.controls['poolArea'].touched">Pool Area number must be a positive integer.</p>
+
+      <div *ngIf="type == '0: Object' || type == '1: Object'" type="hidden">
+        <h5 class="form-label">Number Of Floors</h5>
+        <input type="number" formControlName="numberOfFloors" class="form-control" name="numberOfFloors" style="width: 500px">
+      </div>
+      <p style="color:red" *ngIf="facilityForm.controls['numberOfFloors'].hasError('required') &&
+         facilityForm.controls['numberOfFloors'].touched">Number Of Floors is required</p>
+      <p style="color:red" *ngIf="facilityForm.controls['numberOfFloors'].hasError('pattern') &&
+         facilityForm.controls['numberOfFloors'].touched">number Of Floors number must be a positive integer.</p>
+      <div *ngIf="type === '2: Object'" type="hidden">
+        <h5 class="form-label">Free Facility</h5>
+        <input type="text" formControlName="facilityFree" class="form-control" name="facilityFree" style="width: 500px">
+      </div>
+      <p style="color:red" *ngIf="facilityForm.controls['facilityFree'].hasError('required') &&
+         facilityForm.controls['facilityFree'].dirty">Facility Free is required</p>
+      <div>
+        <h5 class="form-label">Picture</h5>
+        <input type="url" formControlName="image" class="form-control" name="image" style="width: 500px">
+      </div>
+      <div class="vc_empty_space" style="height: 35px"><span class="vc_empty_space_inner"></span></div>
+      <button type="submit "  class="btn btn-primary">Edit</button>
+    </form>
+  </div>
+
+</div>

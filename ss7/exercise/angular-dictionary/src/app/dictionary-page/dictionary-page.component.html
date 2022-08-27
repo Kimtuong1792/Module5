@@ -1,0 +1,15 @@
+<h2>dictionary-page works!</h2>
+<table>
+  <tr>
+    <th>STT</th>
+    <th>Word</th>
+    <th>Mean</th>
+    <th>action</th>
+  </tr>
+<tr *ngFor="let item of words , index as i">
+  <td>{{i+1}}</td>
+  <td>{{item.word}}</td>
+  <td>{{item.mean}}</td>
+  <td> <a [routerLink]="['/dictionary/detail',item.word]">detail </a></td>
+</tr>
+</table>

@@ -1,0 +1,139 @@
+<div class="super_container">
+  <div class="home">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/elements.jpg"
+         data-speed="0.8">
+      <img src="assets/images/services.jpg" alt="">
+    </div>
+    <div class="home_container">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="home_content text-center">
+              <div class="home_title"><h1>Facility</h1></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="search_box">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="search_box_container d-flex flex-row align-items-center justify-content-start" style="position: absolute ; top: -150px">
+            <div class="search_form_container">
+              <form action="#" id="search_form" class="search_form">
+                <div class="d-flex flex-lg-row flex-column align-items-center justify-content-start">
+                  <ul class="search_form_list d-flex flex-row align-items-center justify-content-start flex-wrap">
+                    <li class="search_dropdown d-flex flex-row align-items-center justify-content-start">
+                      <a style="border: none;background-color: white" routerLink="/facility/facilityList">List Facility</a>
+                      <i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
+
+                    </li>
+                    <li class="search_dropdown d-flex flex-row align-items-center justify-content-start">
+                      <a style="border: none;background-color: white" routerLink="/facility/createFacility">Create Facility</a>
+                      <i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
+
+                    </li>
+                    <li class="search_dropdown d-flex flex-row align-items-center justify-content-start">
+                      <a style="border: none;background-color: white">Feedback</a>
+                      <i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
+
+                    </li>
+                    <li class="search_dropdown d-flex flex-row align-items-center justify-content-start">
+                      <button style="border: none;background-color: white">Contact</button>
+                      <i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
+
+                    </li>
+                    <li class="search_dropdown d-flex flex-row align-items-center justify-content-start">
+                      <button style="border: none;background-color: white">Setting</button>
+                      <i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
+
+                    </li>
+                  </ul>
+                  <ul>
+                    <button class="search_button">search</button>
+                  </ul>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Elements -->
+
+  <div class="elements">
+    <div>
+      <div class="row">
+        <div class="col-3" *ngFor="let item of facilities">
+          <div class="col-12 d-flex justify-content-center">
+            <div class="card" style="width: 18rem;">
+              <img [src]="item.image"
+                   height="200px"
+                   class="card-img-top"
+                   alt="...">
+              <div class="card-body">
+                <p class="card-text">{{item.name}}<br>
+                  Room size:{{item.area}}<br>
+                  Cost: {{item.cost |currency}}</p>
+                <a class="text-white" [routerLink]="['/facility/editFacility',item.id]"
+                   style="margin-right: 20px">
+                  <button type="button" class="btn btn-primary" >Edit</button>
+                </a>
+                <button style="margin-left: 20px" type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"
+                        (click)="getFacilityDelete(item)">Delete
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="vc_empty_space" style="height: 42px"><span class="vc_empty_space_inner"></span></div>
+        </div>
+
+    </div>
+  </div>
+    <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
+
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete?<span *ngIf="facilitiesDelete">{{facilitiesDelete.name}}</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="delete()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+

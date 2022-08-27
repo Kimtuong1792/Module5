@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Facility</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Major - 5* Hotel template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles/elements.css">
+    <link rel="stylesheet" type="text/css" href="styles/elements_responsive.css">
+</head>
+<body>
+<div class="super_container">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                        <div class="logo">
+                            <a href="#">
+                                <div>Furama Resort</div>
+                                <div>5 * Resort</div>
+                            </a>
+                        </div>
+                        <nav class="main_nav">
+                            <ul class="d-flex flex-row align-items-center justify-content-start">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="listFacility.html">Facility</a></li>
+                                <li><a href="customer.html">Customer</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="createFacility.html">Add new </a></li>
+                            </ul>
+                        </nav>
+                        <div class="header_extra d-flex flex-row align-items-center justify-content-start ml-auto">
+                            <div class="phone d-flex flex-row align-items-center justify-content-start"><i
+                                    class="fa fa-phone" aria-hidden="true"></i><span>(+84)-869940075</span></div>
+                            <div class="book_button trans_200"><a href="#">Book Now</a></div>
+                        </div>
+                        <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="home">
+        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/elements.jpg"
+             data-speed="0.8"></div>
+        <div class="home_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content text-center">
+                            <div class="home_title"><h1>Facility</h1></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
+    <table class="table">
+        <thead>
+
+        <tr style="background-color: #2e3f61 ; color: white">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Area</th>
+            <th>Cost</th>
+            <th>Max People</th>
+            <th>Standard Room</th>
+            <th>Description Other Convenience</th>
+            <th>Pool Area</th>
+            <th>Number OfF loors</th>
+            <th>Facility Free</th>
+            <th>Rent Type</th>
+            <th>Facility Type</th>
+            <th>Actions</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="row : ${facilityList}">
+            <td th:text="${row.id}">1</td>
+            <td th:text="${row.name}">Villa Beach Front</td>
+            <td th:text="${row.area}">1000</td>
+            <td th:text="${row.cost}">2000</td>
+            <td th:text="${row.maxPeople}">3</td>
+            <td th:text="${row.standardRoom}">Vip</td>
+            <td th:text="${row.descriptionOtherConvenience}">Co ho boi</td>
+            <td th:text="${row.poolArea}">300</td>
+            <td th:text="${row.numberOfFloors}">2</td>
+            <td th:text="${row.facilityFree}"></td>
+            <td th:text="${row.rentType.name}">Thang</td>
+            <td th:text="${row.facilityType.name}">Villa</td>
+            <td>
+                <button type="button" class="btn btn-primary">edit</button>
+            </td>
+            <!--        <td><a th:href="@{/{id}/delete(id=${row.getId()})}">delete</a></td>-->
+            <td>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Delete
+                </button>
+
+            </td>
+
+
+        </tr>
+        <tr th:each="row : ${facilityList}">
+            <td th:text="${row.id}">2</td>
+            <td th:text="${row.name}">House Princess 01</td>
+            <td th:text="${row.area}">1000</td>
+            <td th:text="${row.cost}">2000</td>
+            <td th:text="${row.maxPeople}">3</td>
+            <td th:text="${row.standardRoom}">Normal</td>
+            <td th:text="${row.descriptionOtherConvenience}">Co bep nuong</td>
+            <td th:text="${row.poolArea}">300</td>
+            <td th:text="${row.numberOfFloors}">2</td>
+            <td th:text="${row.facilityFree}"></td>
+            <td th:text="${row.rentType.name}">Thang</td>
+            <td th:text="${row.facilityType.name}">House</td>
+            <td>
+                <button type="button" class="btn btn-primary">edit</button>
+            </td>
+            <!--        <td><a th:href="@{/{id}/delete(id=${row.getId()})}">delete</a></td>-->
+            <td>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Delete
+                </button>
+            </td>
+
+
+        </tr>
+        <tr th:each="row : ${facilityList}">
+            <td th:text="${row.id}">3</td>
+            <td th:text="${row.name}">Room Twin 01</td>
+            <td th:text="${row.area}">1000</td>
+            <td th:text="${row.cost}">2000</td>
+            <td th:text="${row.maxPeople}">3</td>
+            <td th:text="${row.standardRoom}">Normal</td>
+            <td th:text="${row.descriptionOtherConvenience}">Co tivi</td>
+            <td th:text="${row.poolArea}">300</td>
+            <td th:text="${row.numberOfFloors}">2</td>
+            <td th:text="${row.facilityFree}">Co nuoc loc</td>
+            <td th:text="${row.rentType.name}">Thang</td>
+            <td th:text="${row.facilityType.name}">Room</td>
+            <td>
+                <a href="editFacility.html">
+                    <button type="button" class="btn btn-primary">edit</button>
+                </a>
+            </td>
+            <!--        <td><a th:href="@{/{id}/delete(id=${row.getId()})}">delete</a></td>-->
+            <td>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Delete
+                </button>
+            </td>
+
+
+        </tr>
+        </tbody>
+    </table>
+    <div>
+        <a th:href="@{'/facility'(page=${facilityList.number - 1})}" th:if="${facilityList.hasPrevious()}">Previous</a>
+        <span th:text="${facilityList.number + 1}"></span>/<span th:text="${facilityList.totalPages}"></span>
+        <a th:href="@{'/facility'(page=${facilityList.number + 1})}" th:if="${facilityList.hasNext()}">Next</a>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="footer_content d-flex flex-md-row flex-column align-items-center align-items-start justify-content-start">
+                        <div class="copyright">
+
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                            <br>
+                            103 - 105 Vo Nguyen Giap Street,<br>
+                            Khue My Ward, Ngu Hanh Son District,<br>
+                            Danang City, Vietnam
+
+                            7,0 km from Danang Airport
+
+                        </div>
+                        <div class="footer_logo">
+                            <div class="logo">
+                                <a href="#">
+                                    <div>Furama Resort</div>
+                                    <div>5 * Resort</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="button footer_button ml-md-auto"><a href="#">book now</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap-4.1.2/popper.js"></script>
+<script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
+<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+
+<script src="plugins/progressbar/progressbar.min.js"></script>
+<script src="plugins/colorbox/jquery.colorbox-min.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

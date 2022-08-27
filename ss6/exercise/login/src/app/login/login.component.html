@@ -1,0 +1,29 @@
+
+
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()" style="padding-left: 600px ; margin-top: 50px">
+    <h4> Login</h4>
+      <div>
+        <label class="form-label">User</label>
+        <div>
+          <input placeholder="Email" formControlName="email">
+          <p *ngIf="loginForm.controls['email'].hasError('required')&& loginForm.touched">
+           Không được để trống</p>
+          <p *ngIf="loginForm.controls['email'].hasError('email')">mail không đúng định dạng</p>
+        </div>
+      </div>
+
+      <div class="mt-top-2">
+        <label class="form-label">Password</label>
+        <div>
+          <input type="text" placeholder="Password" name="password" formControlName="password">
+          <p *ngIf="loginForm.controls['password'].hasError('required')&& loginForm.touched ">Không Được để trống</p>
+          <p *ngIf="loginForm.controls['password'].hasError('minlength')">Password ít nhất là 6 ký </p>
+        </div>
+      </div>
+<br>
+      <div class="mt-top">
+        <button [disabled]="!loginForm.valid" class="btn btn-primary" type="submit">Sign In</button>
+      </div>
+
+  </form>
+

@@ -1,0 +1,45 @@
+<form class="form" [formGroup]="createForm" style="padding-left: 600px ; margin-top: 50px">
+  <h2>Add new form</h2>
+  <label class="form-label">Email</label>
+  <input type="text" name="email" class="form-control" style="width: 400px" formControlName="email">
+  <p style="color: red" *ngIf="createForm.controls['email'].hasError('required')&& createForm.touched">
+    Không được để trống</p>
+  <p style="color: red" *ngIf="createForm.controls['email'].hasError('email')">Nhập không đúng định dạng</p>
+  <label class="form-label">Password</label>
+  <input type="password" name="password" class="form-control" style="width: 400px" formControlName="password">
+
+  <p style="color: red" *ngIf="createForm.controls['password'].hasError('required')&& createForm.touched ">Nhập không đúng định dạng</p>
+  <p style="color: red" *ngIf="createForm.controls['password'].hasError('minlength')&& createForm.touched ">Nhập tối thiểu 6 ký tự</p>
+
+  <label class="form-label">Confirm Password</label>
+  <input type="text" name="confirmpassword" class="form-control" style="width: 400px" formControlName="confirmPassword">
+  <p style="color: red" *ngIf="createForm.controls['confirmPassword'].hasError('required')&& createForm.touched ">Pass không được để trống</p>
+  <p style="color: red" *ngIf="createForm.controls['confirmPassword'].hasError('minlength')&& createForm.touched ">Nhập tối thiểu 6 ký tự</p>
+  <p style="color: red" *ngIf="createForm.controls['confirmpass'].hasError('invalid')">Password không khớp</p>
+  <label class="form-label">Country</label>
+  <select name="country" class="form-control" style="width: 400px" formControlName="country">
+    <option>Việt Nam</option>
+    <option>Campuchia</option>
+    <option>Thái Lan</option>
+    <option>Trung Quoc</option>
+  </select>
+  <label class="form-label">Age</label>
+  <input type="number" name="age" class="form-control" style="width: 400px" formControlName="age">
+  <p style="color: red" *ngIf="createForm.controls['age'].hasError('required') && createForm.touched">Không được để
+    trống</p>
+  <label class="form-label">Gender</label>
+  <div class="vc_empty_space" style="height: 5px"><span class="vc_empty_space_inner"></span></div>
+  <input name="gender" type="radio" value="Nam"/>Nam
+  <input name="gender" type="radio" value="Nữ"/>Nữ
+  <input name="gender" type="radio" value="Khác"/>Khác
+  <p style="color: red" *ngIf="createForm.controls['gender'].hasError('required') && createForm.touched">Không được để
+    trống</p>
+  <div class="vc_empty_space" style="height: 25px"><span class="vc_empty_space_inner"></span></div>
+  <label class="form-label">Phone</label>
+  <input type="number" name="phone" class="form-control" style="width: 400px" formControlName="phone">
+  <p style="color: red" *ngIf="createForm.controls['phone'].hasError('required') && createForm.touched">Không được để
+    trống</p>
+  <p style="color: red" *ngIf="createForm.controls['phone'].hasError('pattern') && createForm.touched">Không đúng định dạng</p>
+
+  <button class="btn btn-primary" type="submit">submit</button>
+</form>
