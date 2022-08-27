@@ -1,0 +1,94 @@
+{
+  "benhNhan": [
+    {
+      "id": "BN-001",
+      "name": "Truong Ngoc Huyen"
+    },
+    {
+      "id": "BN-002",
+      "name": "Le Van An"
+    },
+    {
+      "id": "BN-003",
+      "name": "Nguyen Thi Hong"
+    },
+    {
+      "id": "BN-004",
+      "name": "Tran Anh"
+    }
+  ],
+  "benhAn": [
+    {
+      "id": "BA-002",
+      "startDate": "2021-12-13",
+      "endDate": "2021-12-12",
+      "liDo": "suy thận",
+      "dieuTri": "chạy thận",
+      "bacSi": "abc",
+      "benhNhan": {
+        "id": "BN-003",
+        "name": "Nguyen Thi Hong"
+      }
+    },
+    {
+      "id": "BA-003",
+      "startDate": "2021-12-12",
+      "endDate": "2021-12-12",
+      "liDo": "covid",
+      "dieuTri": "cách ly",
+      "bacSi": "Trần Văn A",
+      "benhNhan": {
+        "id": "BN-005",
+        "name": "Tran Anh"
+      }
+    },
+    {
+      "id": "BA-004",
+      "startDate": "2021-12-12",
+      "endDate": "2021-12-12",
+      "liDo": "mệt",
+      "dieuTri": "chuyền dịch",
+      "bacSi": "La Văn Thành",
+      "benhNhan": {
+        "id": "BN-006",
+        "name": "Tran Anh"
+      }
+    },
+    {
+      "id": "BA-005",
+      "startDate": "2022-08-10",
+      "endDate": "2022-08-02",
+      "liDo": "suy gan",
+      "dieuTri": "hoá trị",
+      "bacSi": "La Văn Thành",
+      "benhNhan": {
+        "id": "BN-007",
+        "name": "Lê Khả Như"
+      }
+    },
+    {
+      "id": "BA-006",
+      "startDate": "2022-08-04",
+      "endDate": "2022-08-04",
+      "liDo": "covid",
+      "dieuTri": "cách li",
+      "bacSi": "Nguyễn Văn Khánh",
+      "benhNhan": {
+        "id": "BN-008",
+        "name": "Tran Anh Thư"
+      }
+    },
+    {
+      "id": "BA-007",
+      "startDate": "2022-08-11",
+      "endDate": "2022-08-04",
+      "liDo": "Tiểu đường",
+      "dieuTri": "Ăn kiêng",
+      "bacSi": "Nguyễn Văn Khánh",
+      "benhNhan": {
+        "id": "BN-009",
+        "name": "benhNhan"
+      }
+    }
+  ]
+}

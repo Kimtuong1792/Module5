@@ -1,0 +1,67 @@
+<div class="container-fluid d-flex justify-content-center">
+  <div id="form">
+    <h2>Edit BenhAn</h2>
+    <form [formGroup]= "savingForm" (ngSubmit)="updateSaving(id)">
+      <div>
+        <h5>Mã bệnh án</h5>
+        <input type="text" formControlName="id" readonly class="form-control" style="width: 500px" name="id">
+      </div>
+      <fieldset formGroupName="benhNhan">
+      <div>
+        <h5>Mã bệnh nhân</h5>
+        <input type="text" formControlName="id" readonly class="form-control" style="width: 500px">
+      </div>
+
+      <div>
+        <h5>Tên bệnh nhân</h5>
+        <input type="text" formControlName="name" class="form-control">
+        <p style="color:red" *ngIf="savingForm.controls['benhNhan'].hasError('required') &&
+         savingForm.controls['benhNhan'].dirty">Tên bệnh nhân không để trống</p>
+
+      </div>
+
+      </fieldset>
+      <div>
+        <h5>Ngày nhập viện</h5>
+        <input type="date" formControlName="startDate" class="form-control" style="width: 500px">
+      </div>
+      <p style="color:red" *ngIf="savingForm.controls['startDate'].hasError('required') &&
+         savingForm.controls['startDate'].dirty">Ngày nhập viện không để trống</p>
+
+      <div>
+        <h5>Ngày ra viện</h5>
+        <input type="date" formControlName="endDate" class="form-control" style="width: 500px">
+      </div>
+      <p style="color:red" *ngIf="savingForm.controls['endDate'].hasError('required') &&
+         savingForm.controls['endDate'].dirty">Ngày ra viện không để trống</p>
+
+
+      <div>
+        <h5>Lí do</h5>
+        <input type="textarea" formControlName="liDo" class="form-control" style="width: 500px">
+      </div>
+      <p style="color:red" *ngIf="savingForm.controls['liDo'].hasError('required') &&
+         savingForm.controls['liDo'].dirty">Lí do không được để trống</p>
+
+
+      <div>
+        <h5>Phương pháp điều trị</h5>
+        <input type="textarea" formControlName="dieuTri" class="form-control" style="width: 500px">
+      </div>
+      <p style="color:red" *ngIf="savingForm.controls['dieuTri'].hasError('required') &&
+         savingForm.controls['dieuTri'].dirty">Phương pháp điều trị không để trống</p>
+
+      <div>
+        <h5>Bác sĩ điều trị</h5>
+        <input type="text" formControlName="bacSi" class="form-control" style="width: 500px">
+      </div>
+      <p style="color:red" *ngIf="savingForm.controls['bacSi'].hasError('required') &&
+         savingForm.controls['bacSi'].dirty">Bác sĩ điều trị không để trống</p>
+
+<br>
+      <button type="submit" class="btn btn-primary" >Sửa</button>
+      <a [routerLink]="['/benhAn']"><button class="btn btn-primary" style="margin-left: 50px" (click)="thongbao()">Trở về danh sách</button></a>
+
+    </form>
+  </div>
+</div>

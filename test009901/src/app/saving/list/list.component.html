@@ -1,0 +1,77 @@
+<h2>Danh sách bệnh án</h2>
+<br>
+<!--<button style="background-color: #9fcdff" [routerLink]="['/savingcreate']">Create BenhAn</button>-->
+<!--<div class="vc_empty_space" style="height: 20px"><span class="vc_empty_space_inner"></span></div>-->
+<!--<nav class="navbar navbar-light bg-light">-->
+<!--  <div class="container-fluid">-->
+<!--    <form class="d-flex">-->
+<!--      <input class="form-control me-2" type="search" placeholder="Mã số sổ" aria-label="Search"[(ngModel)]="seachs" name="seachs">-->
+
+<!--      <select class="form-control me-2" type="search" placeholder="Search" aria-label="Search"[(ngModel)]="searchCustomer"-->
+<!--              name="seachCustomer">-->
+<!--        <option *ngFor="let c of customer" [value]="c.name">{{c.name}}</option>-->
+<!--      </select>-->
+<!--      <button class="btn btn-outline-success" type="submit" (click)="search()">Search</button>-->
+<!--    </form>-->
+<!--  </div>-->
+<!--</nav>-->
+<table class="table">
+  <tr style="background-color: #9fcdff">
+    <th>STT</th>
+    <th>Mã bệnh án</th>
+    <th>Mã bệnh nhân</th>
+    <th>Tên bệnh nhân</th>
+    <th>Ngày nhập viện</th>
+    <th>ngày ra viện</th>
+    <th>Lí do</th>
+    <th>Phương pháp điều trị</th>
+    <th>Bác sĩ</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let s of benhAn ; index as i">
+    <td> {{i+1}}</td>
+    <td>{{s.id}}</td>
+    <td>{{s.benhNhan.id}}</td>
+    <td>{{s.benhNhan.name}}</td>
+    <td>{{s.startDate}}</td>
+    <td>{{s.endDate}}</td>
+    <td>{{s.liDo}}</td>
+    <td>{{s.dieuTri}}</td>
+    <td>{{s.bacSi}}</td>
+    <td>
+      <a class="text-white" [routerLink]="['/benhAnEdit',s.id]" style="margin-right: 20px">
+        <button class="btn btn-primary" type="submit">Edit</button>
+      </a>
+    </td>
+    <td>
+      <button type="button" class="btn btn-danger" (click)="openDelete(s)"
+              data-toggle="modal" data-target="#exampleModal">
+        Delete
+      </button>
+
+    </td>
+  </tr>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 15px; font-weight: 600" *ngIf="benhAnDelete"> Bạn có muốn xoá thông tin bệnh án {{benhAnDelete.id}} hay không?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+        <button type="button" class="btn btn-danger" (click)="delete(benhAnDelete.id)" data-dismiss="modal">Có
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
