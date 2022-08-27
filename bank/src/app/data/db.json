@@ -1,0 +1,87 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "Truong Ngoc Huyen"
+    },
+    {
+      "id": 2,
+      "name": "Le Van An"
+    },
+    {
+      "id": 3,
+      "name": "Nguyen Thi Hong"
+    },
+    {
+      "id": 4,
+      "name": "Tran Anh"
+    }
+  ],
+  "saving": [
+    {
+      "id": 1,
+      "openDate": "12-12-2012",
+      "sentDate": "13-12-2012",
+      "period": "6 tháng",
+      "money": 12000,
+      "interestRate": "4%/năm",
+      "endow": "Không có",
+      "customer": {
+        "id": 4,
+        "name": "Tran Anh"
+      }
+    },
+    {
+      "id": 2,
+      "openDate": "02-12-2012",
+      "sentDate": "13-12-2012",
+      "period": "3 tháng"
+      ,
+      "money": 12000,
+      "interestRate": "4%/năm",
+      "endow": "Không có",
+      "customer": {
+        "id": 3,
+        "name": "Nguyen Thi Hong"
+      }
+    },
+    {
+      "id": 3,
+      "openDate": "02-12-2012",
+      "sentDate": "13-12-2012",
+      "period": "3 tháng",
+      "money": 12000,
+      "interestRate": "4%/năm",
+      "endow": "Không có",
+      "customer": {
+        "id": 1,
+        "name": "Truong Ngoc Huyen"
+      }
+    },
+    {
+      "id": 4,
+      "openDate": "02-12-2012",
+      "sentDate": "13-12-2012",
+      "period": "1 năm",
+      "money": 12000,
+      "interestRate": "4%/năm",
+      "endow": "Không có",
+      "customer": {
+        "id": 4,
+        "name": "Tran Anh"
+      }
+    },
+    {
+      "id": 6,
+      "openDate": "12-12-2012",
+      "sentDate": "13-12-2012",
+      "period": "Không kì hạn",
+      "money": 12000,
+      "interestRate": "4%/năm",
+      "endow": "Không có",
+      "customer": {
+        "id": 4,
+        "name": "Tran Anh"
+      }
+    }
+  ]}
