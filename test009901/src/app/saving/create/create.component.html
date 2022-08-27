@@ -1,78 +1,78 @@
-<!--<div style="padding-left: 60px">-->
-<!--  <h2>Add new customers</h2>-->
-<!--  <div id="form">-->
-<!--    <form [formGroup]="savingForm" (ngSubmit)="submit()">-->
-<!--&lt;!&ndash;      <div>&ndash;&gt;-->
-<!--&lt;!&ndash;        <h5>Mã số sổ</h5>&ndash;&gt;-->
-<!--&lt;!&ndash;        <input type="number" formControlName="id" readonly class="form-control" style="width: 500px" name="id">&ndash;&gt;-->
-<!--&lt;!&ndash;      </div>&ndash;&gt;-->
-<!--      <fieldset formGroupName="customer">-->
-<!--        <div>-->
-<!--          <h5>Mã khách hàng</h5>-->
-<!--          <input type="number" formControlName="id"  class="form-control" style="width: 500px">-->
-<!--        </div>-->
-
-<!--        <div>-->
-<!--          <h5>Tên khách hàng</h5>-->
-<!--          <input type="text" formControlName="name"  class="form-control" style="width: 500px">-->
-<!--        </div>-->
-<!--        &lt;!&ndash;      <p style="color:red" *ngIf="savingForm.controls['benhNhan'].hasError('required') &&&ndash;&gt;-->
-<!--        &lt;!&ndash;         savingForm.controls['benhNhan'].dirty">Tên khách hàng không để trống</p>&ndash;&gt;-->
-<!--      </fieldset>-->
+<div style="padding-left: 60px">
+  <h2>Add new customers</h2>
+  <div id="form">
+    <form [formGroup]="savingForm" (ngSubmit)="submit()">
 <!--      <div>-->
-<!--        <h5>Ngày mở sổ</h5>-->
-<!--        <input type="date" formControlName="openDate" class="form-control" style="width: 500px">-->
+<!--        <h5>Mã số sổ</h5>-->
+<!--        <input type="number" formControlName="id" readonly class="form-control" style="width: 500px" name="id">-->
 <!--      </div>-->
-<!--      &lt;!&ndash;      <p style="color:red" *ngIf="savingForm.controls['openDate'].hasError('required') &&&ndash;&gt;-->
-<!--      &lt;!&ndash;         savingForm.controls['openDate'].dirty">Ngày mở sổ không để trống</p>&ndash;&gt;-->
+      <fieldset formGroupName="customer">
+        <div>
+          <h5>Mã khách hàng</h5>
+          <input type="number" formControlName="id"  class="form-control" style="width: 500px">
+        </div>
 
-<!--      <div>-->
-<!--        <h5>Thời gian bắt đầu gửi</h5>-->
-<!--        <input type="date" formControlName="sentDate" class="form-control" style="width: 500px">-->
-<!--      </div>-->
-<!--      &lt;!&ndash;      <p style="color:red" *ngIf="savingForm.controls['sentDate'].hasError('required') &&&ndash;&gt;-->
-<!--      &lt;!&ndash;         savingForm.controls['sentDate'].dirty">Thời gian bắt đầu gửi không để trống</p>&ndash;&gt;-->
+        <div>
+          <h5>Tên khách hàng</h5>
+          <input type="text" formControlName="name"  class="form-control" style="width: 500px">
+        </div>
+        <!--      <p style="color:red" *ngIf="savingForm.controls['benhNhan'].hasError('required') &&-->
+        <!--         savingForm.controls['benhNhan'].dirty">Tên khách hàng không để trống</p>-->
+      </fieldset>
+      <div>
+        <h5>Ngày mở sổ</h5>
+        <input type="date" formControlName="openDate" class="form-control" style="width: 500px">
+      </div>
+      <!--      <p style="color:red" *ngIf="savingForm.controls['openDate'].hasError('required') &&-->
+      <!--         savingForm.controls['openDate'].dirty">Ngày mở sổ không để trống</p>-->
 
-<!--      <div>-->
-<!--        <h5>Kì hạn</h5>-->
-<!--        <select formControlName="period" class="form-control" style="width: 500px">-->
-<!--          <option value="3 tháng"> 3 tháng</option>-->
-<!--          <option value="6 tháng"> 6 tháng</option>-->
-<!--          <option value="1 năm"> 1 năm</option>-->
-<!--          <option value="5 năm"> 5 năm</option>-->
-<!--        </select>-->
-<!--      </div>-->
-<!--      &lt;!&ndash;      <p style="color:red" *ngIf="savingForm.controls['period'].hasError('required') &&&ndash;&gt;-->
-<!--      &lt;!&ndash;         savingForm.controls['period'].dirty">Kì hạn không để trống</p>&ndash;&gt;-->
+      <div>
+        <h5>Thời gian bắt đầu gửi</h5>
+        <input type="date" formControlName="sentDate" class="form-control" style="width: 500px">
+      </div>
+      <!--      <p style="color:red" *ngIf="savingForm.controls['sentDate'].hasError('required') &&-->
+      <!--         savingForm.controls['sentDate'].dirty">Thời gian bắt đầu gửi không để trống</p>-->
 
-<!--      <div>-->
-<!--        <h5>Số tiền gửi</h5>-->
-<!--        <input type="number" formControlName="money" class="form-control" style="width: 500px">-->
-<!--      </div>-->
+      <div>
+        <h5>Kì hạn</h5>
+        <select formControlName="period" class="form-control" style="width: 500px">
+          <option value="3 tháng"> 3 tháng</option>
+          <option value="6 tháng"> 6 tháng</option>
+          <option value="1 năm"> 1 năm</option>
+          <option value="5 năm"> 5 năm</option>
+        </select>
+      </div>
+      <!--      <p style="color:red" *ngIf="savingForm.controls['period'].hasError('required') &&-->
+      <!--         savingForm.controls['period'].dirty">Kì hạn không để trống</p>-->
 
-<!--      &lt;!&ndash;      <p style="color:red" *ngIf="savingForm.controls['money'].hasError('required') &&&ndash;&gt;-->
-<!--      &lt;!&ndash;         savingForm.controls['money'].dirty">Tiền không để trống</p>&ndash;&gt;-->
-<!--      &lt;!&ndash;      <p style="color:red" *ngIf="savingForm.controls.money.hasError('min') &&&ndash;&gt;-->
-<!--      &lt;!&ndash;         savingForm.controls['money'].dirty">Tiền phải lớn hơn 10.000.000</p>&ndash;&gt;-->
+      <div>
+        <h5>Số tiền gửi</h5>
+        <input type="number" formControlName="money" class="form-control" style="width: 500px">
+      </div>
 
-<!--      <div>-->
-<!--        <h5>Lãi suất</h5>-->
-<!--        <input type="text" formControlName="interestRate" class="form-control" style="width: 500px">-->
-<!--      </div>-->
-<!--      &lt;!&ndash;      <p style="color:red" *ngIf="savingForm.controls['interestRate'].hasError('required') &&&ndash;&gt;-->
-<!--      &lt;!&ndash;         savingForm.controls['interestRate'].dirty">Lãi suất không để trống</p>&ndash;&gt;-->
+      <!--      <p style="color:red" *ngIf="savingForm.controls['money'].hasError('required') &&-->
+      <!--         savingForm.controls['money'].dirty">Tiền không để trống</p>-->
+      <!--      <p style="color:red" *ngIf="savingForm.controls.money.hasError('min') &&-->
+      <!--         savingForm.controls['money'].dirty">Tiền phải lớn hơn 10.000.000</p>-->
 
-<!--      <div>-->
-<!--        <h5>Ưu đãi</h5>-->
-<!--        <input type="text" formControlName="endow" class="form-control" style="width: 500px">-->
-<!--      </div>-->
-<!--      &lt;!&ndash;      <p style="color:red" *ngIf="savingForm.controls['endow'].hasError('required') &&&ndash;&gt;-->
-<!--      &lt;!&ndash;         savingForm.controls['endow'].dirty">Ưu đãi không để trống</p>&ndash;&gt;-->
+      <div>
+        <h5>Lãi suất</h5>
+        <input type="text" formControlName="interestRate" class="form-control" style="width: 500px">
+      </div>
+      <!--      <p style="color:red" *ngIf="savingForm.controls['interestRate'].hasError('required') &&-->
+      <!--         savingForm.controls['interestRate'].dirty">Lãi suất không để trống</p>-->
 
-<!--      <button type="submit" class="btn btn-primary" >Save</button>-->
+      <div>
+        <h5>Ưu đãi</h5>
+        <input type="text" formControlName="endow" class="form-control" style="width: 500px">
+      </div>
+      <!--      <p style="color:red" *ngIf="savingForm.controls['endow'].hasError('required') &&-->
+      <!--         savingForm.controls['endow'].dirty">Ưu đãi không để trống</p>-->
 
-<!--    </form>-->
-<!--    <div class="vc_empty_space" style="height: 35px"><span class="vc_empty_space_inner"></span></div>-->
+      <button type="submit" class="btn btn-primary" >Save</button>
 
-<!--  </div>-->
-<!--</div>-->
+    </form>
+    <div class="vc_empty_space" style="height: 35px"><span class="vc_empty_space_inner"></span></div>
+
+  </div>
+</div>

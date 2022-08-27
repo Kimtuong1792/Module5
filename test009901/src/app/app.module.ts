@@ -12,7 +12,7 @@ import {EditComponent} from './saving/edit/edit.component';
 import {ListComponent} from './saving/list/list.component';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
-// import { CreateComponent } from './saving/create/create.component';
+import { CreateComponent } from './saving/create/create.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import {FooterComponent} from './footer/footer.component';
     ListComponent,
     HeaderComponent,
     FooterComponent,
-
+    CreateComponent
   ],
     imports: [
         BrowserModule,
